@@ -1,0 +1,153 @@
+<%= javascript_include_tag "style" %>
+<%= javascript_include_tag "pad" %>
+
+<div id="mainholderpad" class="clearfix">
+	
+	<table width="500">
+	  <tr> 
+		<td> 
+			<%= javascript_include_tag "read" %>
+		  <script Language="JavaScript">
+			alert("Please wait while Savings Calculator builds the savings schedule. This can take up to 30 seconds or more, depending on the speed of your computer's processor and the web browser you are using. Click OK to continue.");
+		  </script>
+		  <% form_tag do %>
+			<center>
+			  <table border="1" cellpadding="7">
+				<tr> 
+				  <td colspan="2"> 
+					<center>
+					  <span class="FontThree"> Savings Calculator</span>
+					</center><hr size="1" width="100%" />
+					<span class="FontThree"> 
+					<center>
+					  Results
+					</center>
+					</span> </td>
+				</tr>
+				<tr> </tr>
+				<tr> 
+				  <td> <span class="FontFour"> 
+					<script language="JavaScript">
+						var SO = getValue(passed,'calculate_option');
+						if (SO == 0) {
+							document.write("Beginning Balance:");
+						}
+						if (SO == 1) {
+							document.write("Ending Balance:");
+						}
+						if (SO == 2) {
+							document.write("Beginning Balance:");
+						}
+					</script>
+					</span> </td>
+				  <td> <span class="FontFour"> 
+					<%= javascript_include_tag "scc" %>
+					</span> </td>
+				</tr>
+				<tr> 
+				  <td> <span class="FontFour"> Interest Rate: </span> 
+				  </td>
+				  <td> <span class="FontFour"> 
+					<script language="JavaScript">
+						var B = getValue(passed,'InterestRate');
+						if (B < 0) { B = 0 }
+						document.write(roundingPad((B * 100.00)/100)+"%");
+					</script>
+					</span> </td>
+				</tr>
+				<tr> 
+				  <td> <span class="FontFour"> 
+					<script language="JavaScript">
+						var SO = getValue(passed,'calculate_option');
+						if (SO == 0) {
+							document.write("Periodic Contribution:");
+						}
+						if (SO == 1) {
+							document.write("Periodic Contribution:");
+						}
+						if (SO == 2) {
+							document.write("Ending Balance:");
+						}
+					</script>
+					</span> </td>
+				  <td> <span class=FontFour> 
+					<script language="JavaScript">
+						if (UO == 0) {
+							document.write(currencyPad(C));
+						}
+						if (UO == 1) {
+							document.write(currencyPad(C));
+						}
+						if (UO == 2) {
+							document.write(currencyPad(Z));
+						}
+					</script>
+					</span> </td>
+				</tr>
+				<tr> 
+				  <td> <span class="FontFour"> Number of Periods: </span> 
+				  </td>
+				  <td> <span class="FontFour"> 
+					<script language="JavaScript">
+						document.write(integerPad(D));
+					</script>
+					</span> </td>
+				</tr>
+				<tr> 
+				  <td> <span class="FontFour"> Compounding Period: </span> 
+				  </td>
+				  <td> <span class="FontFour"> 
+					<script language="JavaScript">
+						document.write(strY);
+					</script>
+					</span> </td>
+				</tr>
+				<tr> 
+				  <td> <span class="FontFour"> Inflation Rate: </span> 
+				  </td>
+				  <td> <span class="FontFour"> 
+					<script language="JavaScript">
+						document.write(""+roundingPad((H*100.00)/100)+"%");
+					</script>
+					</span> </td>
+					</tr>
+					<tr> 
+					  <td> <span class=FontFour> 
+						<script language="JavaScript">
+							var SO = getValue(passed,'calculate_option');
+							if (SO == 0) {
+								document.write("Ending Balance:");
+							}
+							if (SO == 1) {
+								document.write("Beginning Balance:");
+							}
+							if (SO == 2) {
+								document.write("Periodic Contribution:");
+							}
+						</script>
+					</span> </td>
+				  <td> <span class="FontFour"> 
+					<script language="JavaScript">
+						if (UO == 0) {
+							document.write(currencyPad(Z));
+						}
+						if (UO == 1) {
+							document.write(currencyPad(A));
+						}
+						if (UO == 2) {
+							document.write(currencyPad(C));
+						}
+					</script>
+					</span> </td>
+				</tr>
+			  </table>
+			  <br />
+			  <br />
+			  <%= javascript_include_tag "sca" %>
+			  <br />
+			  <br />
+			  <%= javascript_include_tag "endb" %>
+			</center>
+		  <% end %>
+	</table>
+</div>

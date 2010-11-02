@@ -1,0 +1,81 @@
+<div id="mainholderpad" class="clearfix">
+<table class="loginpg">
+    <tr>
+        <td></td>
+    </tr><tr>
+        <td align="left"><%= image_tag "kit_connect.jpg", :width=>141, :height=>51, :alt=>"" %></td>
+        <td align="center"><p class="warningmsg"><strong>WARNING!! WARNING!! WARNING!!</strong></p>Don't fall victim to a phishing scam!<br />
+	    <%= link_to "Read Important Notice", whatsnew_path, :class=>"menuother" %></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="prop"><strong>Check out all the benefits of KIT Connect home banking.</strong><br /><br />
+    	Check out all the benefits of KIT Connect.  Enter now to discover the fast, convenient access available through KIT Connect.  
+	    With your <strong>Personal Identification Number</strong> (PIN) you can see all of your accounts, view transactions,
+	    and even transfer funds at the touch of your fingertips.  You can personalize your first page to show you the account information
+	    you want NOW.  If you ever need help, KIT Federal Credit Union is just an <%= mail_to "memberservices@kitfcu.org", "email" %> away.  If you do not have a PIN,
+	    request it <%= mail_to "memberservices@kitfcu.org?Subject=REQUEST PIN", "here" %>.<br /><br />
+	    Please call 502.459.9286 or 888.459.9286 (toll free) for more information.<br /><br /></td>
+    </tr>
+</table>
+<form id="login" method="post" action="https://www.kitfcu.org/hbv3_2/login.asp">
+<fieldset>            
+<table>
+<tr>
+    <td valign="top">	
+
+			<table class="loginpgout">
+    			<tr><td colspan="3" class="prop"></td></tr>
+				<tr>
+    				<td class="prop"></td>
+     				<td>
+	     					<table class="loginin">
+	     						<tr>
+	     							<td align="right"><b>Account Number: </b></td>
+	         						<td><input name="account" value="" size="10" /></td>
+	     						</tr>
+	     
+	     						<tr>
+	         						<td align="right"><strong>KIT Connect PIN: </strong></td>
+	         						<td><input type="password" name="pin" value="" size="10" /></td>
+	     						</tr>
+								<tr>
+	        						<td colspan="2" align="center">
+										<input type="submit" value="Connect" />
+	        						</td>
+	     						</tr>
+	     					</table>
+ 					</td> 
+    				<td class="prop"></td>
+				</tr>
+				<tr>
+					<td colspan="3" class="prop"></td>
+				</tr>
+			</table>
+
+	</td>
+    <td align="left">
+		<%= link_to "Frequently Asked Questions", hb_faq_path, :class=>"menuother", :rel=>"external" %><br />
+		<%= link_to "Security Information", secinfo_path, :class=>"menuother", :rel=>"external" %><br />
+		<%= mail_to "memberservices@kitfcu.org?Subject=REQUEST PIN", "Request PIN", :class=>"menuother" %><br />
+		<%= link_to "EFT and Other Disclosures", eft_path, :class=>"menuother", :rel=>"external" %><br /><br />
+ 		<strong><%= link_to "Security Notification" + image_tag("arrows_sm.gif",  :alt=>"img"), secnotification_path, :class=>"menuother", :rel=>"external" %> </strong><br /><br />
+    </td>
+  </tr>
+</table>
+</fieldset>			  
+</form>
+			<p><strong>IMPORTANT NOTICE</strong></p>
+			<h2>FEDERAL  DEPOSIT INSURANCE INCREASE NOW PERMANENT!!</h2>
+            <p>On  October 3, 2008, Federal Deposit Insurance for banks and credit unions was  temporarily increased from $100,000 to $250,000.&nbsp; <strong><span class="red">The $250,000 coverage has now been made permanent.</span> &nbsp;</strong>Your actual insurance amount may be much  higher, depending on what type of accounts you have and how they&rsquo;re  titled.&nbsp; See the example below.</p>
+            <p>Member  A and B, husband and wife, each have an individual account containing  $250,000.&nbsp; In addition, they hold a  qualifying joint account containing $500,000.&nbsp; <em><span class="red">Their  total insurance coverage is $1,000,000:</span></em><br />
+                Each  individual account is insured up to $250,000, and the interest of A and the  interest of B in the joint account are each insured for $250,000 separately  from their individual accounts, making their total coverage $1,000,000.</p>
+            <p>For  more information, visit <%= link_to "www.ncua.gov", "http://www.ncua.gov/", :rel=>"external" %> and  click on &ldquo;insurance coverage&rdquo; and &ldquo;your insured funds&rdquo;.&nbsp; Remember, not one penny of insured savings  has ever been lost by a member of a federally insured credit union.&nbsp; Your money is safe at KIT.</p>
+<p class="centertext"><%= image_tag "netscape.gif", :width=>90, :height=>30, :alt=>"" %>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <%= image_tag "ie.gif", :width=>88, :height=>31, :alt=>"" %>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <script type="text/javascript">SiteSeal("https://seal.networksolutions.com/images/colorsealwcpro.gif", "NETSP", "none");</script>
+            </p>
+            <br /><br /><br />
+						
+</div>

@@ -1,0 +1,311 @@
+<div class="innercontent clearfix">      
+  <div class="margin clearfix"> 
+	<% form_for(@memberapp) do |f| %>
+		<%= f.error_messages %>
+		<table class="app">
+			<tr>
+			  <td align="center" colspan="2"><h1 class="centertext"><strong>Membership&nbsp; Application </strong>
+                      </h1>
+                  <p class="centertext">
+			            For membership information, <%= link_to "click here", about_path(:anchor => "membership") %>.</p></td>
+			  </tr>
+			<tr>
+			      <td align="center" colspan="2">
+                    <p class="centertext">
+                      <strong>KIT FEDERAL CREDIT UNION<br />3415 Bardstown Road, Ste 103A<br />Louisville, KY 40218</strong></p>
+                  </td>
+             </tr>
+             <tr><td align="left" colspan="2">
+                    <p>
+                        In order to join the Credit Union, you 
+                        must fill out an application and submit a copy of a government issued I.D. 
+                        Please fill out the following application, then click on the submit button to start the process to apply for membership.<br />&nbsp;<strong>When finished, print it out, sign it, and mail it to the above address or fax it to 502.458.7038 along with a copy of a government issued I.D. (such as a valid driver’s license).  We must have a signed application and a copy of a valid I.D. on file in order to approve and open your membership.  A minimum deposit of $6.00 is required to open the account.<br />&nbsp;NOTE: KIT FEDERAL CREDIT UNION has a secure site for protection and privacy.</strong></p>
+                      <p class="centertext" style="color:#009933">
+			&nbsp;* Required fields</p></td>
+			  </tr>
+			    <tr>
+			      <td class="textcolor">*Name:</td>
+			      <td><%= f.text_field :name %></td></tr>
+				<tr>  
+                  <td>Select One:</td>
+			      <td><%= f.radio_button("salutation", "Mr.") %>Mr.
+			        <%= f.radio_button("salutation", "Mrs.") %>Mrs.
+					<%= f.radio_button("salutation", "Ms.") %>Ms.
+					<%= f.radio_button("salutation", "Miss.") %>Miss.</td>
+			    </tr>
+				<tr>  
+                  <td class="textcolor">*Social Security Number:</td>
+			      <td><%= f.text_field :ssn, :size => 10, :maxlength => 11 %>
+			          (XXX - XX - XXXX)</td>
+			    </tr>
+				<tr>  
+                  <td class="textcolor">*Birth Date:</td>
+			      <td><%= f.text_field :date_of_birth, :size => 15, :maxlength => 11 %>
+			      (MM/DD/YYYY)</td>
+			    </tr>
+				<tr class="backgray">
+			      <td>Joint Name:</td>
+			      <td align="left"><%= f.text_field :joint_name %></td>
+			    </tr>
+			    <tr class="backgray">
+			      <td>Select One:</td>
+			      <td align="left"><%= f.radio_button("joint_salutation", "Mr.") %>Mr.
+			        <%= f.radio_button("joint_salutation", "Mrs.") %>Mrs.
+					<%= f.radio_button("joint_salutation", "Ms.") %>Ms.
+					<%= f.radio_button("joint_salutation", "Miss.") %>Miss.</td>
+			    </tr>
+			    <tr class="backgray">
+			      <td>Joint Social Security Number:</td>
+			      <td align="left"><%= f.text_field :joint_ssn, :size => 10, :maxlength => 11 %>(XXX - 
+                      XX - XXXX)</td>
+			    </tr>
+			    <tr class="backgray">
+			      <td>Joint Birth Date:</td>
+			      <td align="left"><%= f.text_field :joint_date_of_birth, :maxlength => 10 %>
+			      (MM/DD/YYYY)</td>
+			    </tr>
+			      <tr>
+			      <td class="textcolor">*Physical Address:</td>
+			      <td align="left"><%= f.text_field :physical_address, :size => 30 %></td>
+			    </tr>
+                <tr>
+			      <td class="textcolor">*City:</td>
+			      <td><%= f.text_field :city, :size => 25 %></td>
+                  </tr>
+                  <tr>
+                      <td class="textcolor">*State:</td>
+			      <td><%= f.select( :state,
+								{ "Alabama" => "AL", 
+								  "Alaska" => "AK", 
+								  "Arizona" => "AZ", 
+								  "Arkansas" => "AR", 
+								  "California" => "CA", 
+								  "Colorado" => "CO",
+								  "Connecticut" => "CT", 
+								  "Delaware" => "DE", 
+								  "District Of Columbia" => "DC", 
+								  "Florida" => "FL", 
+								  "Georgia" => "GA", 
+								  "Hawaii" => "HI",
+								  "Idaho" => "ID", 
+								  "Illinois" => "IL", 
+								  "Indiana" => "IN", 
+								  "Iowa" => "IO", 
+								  "Kansas" => "KS", 
+								  "Kentucky" => "KY",
+								  "Louisiana" => "LA", 
+								  "Maine" => "ME", 
+								  "Maryland" => "MD", 
+								  "Massachusetts" => "MA", 
+								  "Michigan" => "MI", 
+								  "Minnesota" => "MN",
+								  "Mississippi" => "MS", 
+								  "Missouri" => "MO", 
+								  "Montana" => "MT", 
+								  "Nebraska" => "NE", 
+								  "Nevada" => "NV", 
+								  "New Hampshire" => "NH",
+								  "New Jersey" => "NJ", 
+								  "New Mexico" => "NM", 
+								  "New York" => "NY", 
+								  "North Carolina" => "NC", 
+								  "North Dakota" => "ND", 
+								  "Ohio" => "OH",
+								  "Oklahoma" => "OK", 
+								  "Oregon" => "OR", 
+								  "Pennsylvania" => "PA", 
+								  "Rhode Island" => "RI", 
+								  "South Carolina" => "SC", 
+								  "South Dakota" => "SD",
+								  "Tennessee" => "TN", 
+								  "Texas" => "TX", 
+								  "Utah" => "UT", 
+								  "Vermont" => "VT", 
+								  "Virginia" => "VA", 
+								  "Washington" => "WA",
+								  "West Virginia" => "WV",
+								  "Wisconsin" => "WI",
+								  "Wyoming" => "WY"
+								 }) %></td>
+                  </tr>
+                  <tr>
+                      <td class="textcolor">*Zip:</td>
+			      <td><%= f.text_field :zip, :size => 10, :maxlength => 5 %></td>
+			      </tr>
+			    <tr>
+			      <td>Mailing Address:</td>
+			      <td align="left"><%= f.text_field :mailing_address, :size => 30 %></td>
+			    </tr>
+			    <tr>
+			      <td>City:</td>
+			      <td><%= f.text_field :mailing_city, :size => 25 %></td></tr>
+				  <tr><td>State:</td>
+			      <td><%= f.select( :mailing_state,
+								{ "Alabama" => "AL", 
+								  "Alaska" => "AK", 
+								  "Arizona" => "AZ", 
+								  "Arkansas" => "AR", 
+								  "California" => "CA", 
+								  "Colorado" => "CO",
+								  "Connecticut" => "CT", 
+								  "Delaware" => "DE", 
+								  "District Of Columbia" => "DC", 
+								  "Florida" => "FL", 
+								  "Georgia" => "GA", 
+								  "Hawaii" => "HI",
+								  "Idaho" => "ID", 
+								  "Illinois" => "IL", 
+								  "Indiana" => "IN", 
+								  "Iowa" => "IO", 
+								  "Kansas" => "KS", 
+								  "Kentucky" => "KY",
+								  "Louisiana" => "LA", 
+								  "Maine" => "ME", 
+								  "Maryland" => "MD", 
+								  "Massachusetts" => "MA", 
+								  "Michigan" => "MI", 
+								  "Minnesota" => "MN",
+								  "Mississippi" => "MS", 
+								  "Missouri" => "MO", 
+								  "Montana" => "MT", 
+								  "Nebraska" => "NE", 
+								  "Nevada" => "NV", 
+								  "New Hampshire" => "NH",
+								  "New Jersey" => "NJ", 
+								  "New Mexico" => "NM", 
+								  "New York" => "NY", 
+								  "North Carolina" => "NC", 
+								  "North Dakota" => "ND", 
+								  "Ohio" => "OH",
+								  "Oklahoma" => "OK", 
+								  "Oregon" => "OR", 
+								  "Pennsylvania" => "PA", 
+								  "Rhode Island" => "RI", 
+								  "South Carolina" => "SC", 
+								  "South Dakota" => "SD",
+								  "Tennessee" => "TN", 
+								  "Texas" => "TX", 
+								  "Utah" => "UT", 
+								  "Vermont" => "VT", 
+								  "Virginia" => "VA", 
+								  "Washington" => "WA",
+								  "West Virginia" => "WV",
+								  "Wisconsin" => "WI",
+								  "Wyoming" => "WY"
+								 }) %></td></tr>
+			     <tr> <td>Zip:</td>
+			      <td><%= f.text_field :mailing_zip, :size => 10, :maxlength => 5 %></td>
+			    </tr>
+			    <tr>
+			      <td class="textcolor">*Home Phone:</td>
+			      <td><%= f.text_field :home_phone, :size => 15, :maxlength => 12 %>
+		          (### - ### - ####)</td></tr>
+			    <tr>  
+                  <td>Business Phone:</td>
+			      <td><%= f.text_field :business_phone, :size => 15, :maxlength => 12 %>
+(### - ### - ####)</td>
+			    </tr>
+				<tr>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td></tr>
+			    <tr>  
+                  <td class="textcolor">*Membership Eligibility:<br />
+                    (Please type in your association/company or relative's name)
+                  </td>
+			      <td><%= f.radio_button("membership_eligibility", "Association or Company") %>Association or Company
+			<%= f.radio_button("membership_eligibility", "Family") %>Family<br />
+			<%= f.text_area :describe_membership_eligibility, :rows=>2, :cols=> 45 %></td>
+			    </tr>
+				<tr>
+			      <td colspan="2">
+                      <p class="style1">
+                          Due to the Privacy Act we must have a unique Privacy Code 
+                          selected by you. This Code will be used when talking with the staff over the phone. Clearly print your password containing a minimum of 4 and maximum of 8 Alpha letters in the boxes below.</p>
+                      </td>
+			    </tr>
+			    <tr>  
+                  <td class="textcolor">*Privacy Code for Member :<%= f.text_field :privacy_code_for_member, :size => 15 %></td>
+			      <td>Joint Owner Privacy Code : <%= f.text_field :privacy_code_for_joint, :size => 15 %></td>
+			    </tr>
+				<tr>
+			      <td>E-Mail Address:</td>
+			      <td align="left"><%= f.text_field :email_address, :size => 30 %></td>
+			    </tr>
+				<tr>
+			      <td>Best time to call:</td>
+			      <td align="left"><%= f.text_field :best_time_to_call, :size => 15 %></td></tr>
+				<tr>
+				  <td>Are you a Citizen?</td>
+			      <td align="left"><%= f.radio_button("us_citizen", "Yes, I'm a US citizen") %>Yes
+		          <%= f.radio_button("us_citizen", "No, I'm not a US citizen") %>No</td>
+			    </tr>
+				<tr><td colspan="2" class="textcolor"><i>*Please Check the accounts you wish to open:</i></td></tr>
+				<tr>
+					<td align="left"><%= check_box("memberapp", "prime_savings", {}, "yes", "no")%>Prime Savings</td>
+			        <td align="left"><%= check_box("memberapp", "other_savings", {}, "yes", "no")%>Other Savings</td>
+				</tr>
+				<tr>
+					<td align="left"><%= check_box("memberapp", "visa_debit_card", {}, "yes", "no")%>VISA® Debit Card</td>
+			        <td align="left"><%= check_box("memberapp", "audio_response_pin", {}, "yes", "no")%>KIT Connect and Audio Response PIN Number</td>
+				</tr>
+				<tr>
+					<td align="left" colspan="2"><p class="main"><%= check_box("memberapp", "share_draft", {}, "yes", "no")%>Share Draft with the following overdraft protection:</p></td>
+				</tr>
+				<tr>
+					<td colspan="2"><%= f.radio_button("overdraft_protection", "No Overdraft Privilege Requested") %>No Overdraft Privilege Requested<br />
+					<%= f.radio_button("overdraft_protection", "Overdraft to Share Account") %>Overdraft to Share Account<br />
+					<%= f.radio_button("overdraft_protection", "Overdraft to Loan, then Shares") %>Overdraft to Loan, then Shares<br />
+					<%= f.radio_button("overdraft_protection", "Overdraft to Loan") %>Overdraft to Loan<br />
+				<%= f.radio_button("overdraft_protection", "Overdraft to Shares, then Loan") %>Overdraft to Shares, then Loan</td>
+				</tr>
+				<tr>
+					<td align="left"  colspan="2">&nbsp;</td>
+				</tr>
+			  </table>
+			  
+              <table class="signature">
+			          <tr>
+			            <td colspan="2" class="red">
+						<p class="subtitle">SIGNATURES:</p>       
+						<hr />
+                        <p class="centertext"><i>By submitting this application online, I hereby make application for membership in and agree to conform to the Bylaws, as amended, of KIT FEDERAL CREDIT UNION (the "Credit Union"). I certify that: I am within the field of membership of this Credit Union; and the information provided on this application is true and correct. I also agree to be bound to the terms and conditions of any account that I have in the Credit Union now or in the future as set forth in the Membership Agreement.  I have read the Truth-In-Lending Disclosures (click here for disclosures).  I understand that the Federal government requires me to submit a copy of a government issued I.D., such as a driver’s license in order for my application to be valid and
+                          processed.
+                          I authorize the Credit Union to verify any information provided hereon, to check my financial history, to obtain consumer reports on me, and to answer questions about my experiences with the Credit Union. I understand that it is a federal crime to willfully and deliberately provide incomplete or incorrect information to a Federal chartered credit union insured by National Credit Union Administration. I understand once my membership is approved, I must complete, sign, and follow instructions to finalize my membership or my membership will not be opened and I will not be extended any services.
+                          </i></p></td>
+			          </tr>
+			<tr>
+				<td class="red"><br />________________________________________<br />
+				<i>Member</i></td>
+				<td class="red"><br />_____/______/_________<br />
+				<i>Date</i></td>
+			</tr>
+			<tr>
+				<td class="red"><br />________________________________________<br />
+				<i>Joint Owner</i></td>
+				<td class="red"><br />_____/______/_________<br />
+				<i>Date</i></td>
+			</tr>
+				</table>
+					
+<p class="main">If you are not a U.S. person, as identified in the Membership Card under 
+TIN Certification, click through to the IRS Web site to print a copy of the <strong>W-8 BEN form</strong> and the 
+    <strong>W-8 BEN instructions</strong>. Complete the form and attach it to your membership 
+    application.</p>
+<p class="main">Upon completion of the necessary forms, please mail them and your opening 
+deposit as directed above.  If you have any questions or any of the links are broken, please feel free 
+to <%= link_to "contact us", contact_path %> with any questions.</p>
+<p class="main"><strong>Be sure to print out the
+form prior to submitting it and fax or mail it and the copy of your I.D. to us.</strong><br />&nbsp;(Please click anywhere in the white field before you send this page to the printer.)</p>
+<p class="main">Please call the Member Service Department at 502.459.9286 or 888.459.9286 (toll free) on the following business day for status of your application.</p>
+  			<p class="centertext"><%= f.submit 'Submit Application' %>
+			</p>
+	<% end %>
+  </div>
+</div>  
+
+
+
+
+
+
+

@@ -1,0 +1,442 @@
+<div class="innercontent clearfix">      
+	<div class="margin clearfix">
+		<% form_for(@visarequest) do |f| %>
+			<%= f.error_messages %>
+			<table class="app">
+			  <tr>
+				<td colspan="3"><h1 class="centertext">
+					   <strong>Request 
+						  for a VISA&reg;</strong> <strong>Card 
+						  Account</strong></h1>
+				<p class="centertext">Scroll down for important disclosure information
+								</p>
+				
+					<p style="color: #009933">* Required fields</p></td>
+			</tr>
+			<tr class="backgray">
+				  <td align="center" colspan="3">
+					  <p class="centertext"><strong>KIT FEDERAL CREDIT UNION<br />
+												3415 Bardstown Road, Ste 103A<br />
+												Louisville, KY 40218</strong></p>
+												<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please fill out the following application, then click on the submit button to start the process to receive a VISA&#153; credit card.<br />
+												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>When finished, print it out, sign it, and mail it to the above address or fax it to 502.458.7038. <br /> KIT FEDERAL CREDIT UNION must have a signed copy on file in order to issue a credit card.</strong><br />
+												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOTE: KIT FEDERAL CREDIT UNION has a secure site for protection and privacy.</p>
+				</td>
+			  </tr>
+			  <tr> 
+				<td class="textcolor" colspan="3">*PLEASE CHECK THE CORRECT BOXES. PROPERLY COMPLETED APPLICATIONS WILL ENSURE PROMPT EVALUATION.</td>
+			  </tr>
+			  <tr>
+				<td>
+					<%= check_box("visarequest", "visa_card_account", {}, "Yes", "No")%>
+					<span class="main"> I/We wish to apply for a VISA&#153; CARD ACCOUNT. </span>
+				</td>
+				<td class="main">
+					<%= f.radio_button("type_of_account", "Apply for a INDIVIDUAL ACCOUNT") %> <span class="main"> INDIVIDUAL ACCOUNT</span><br />
+				</td>
+				<td class="main" >
+					<%= f.radio_button("type_of_account", "Apply for a JOINT ACCOUNT") %> <span class="main">JOINT ACCOUNT</span></td></tr>
+			  <tr>
+				<td colspan="3">
+					<%= check_box("visarequest", "apply_for_credit_increase", {}, "Yes", "No")%> I/We wish to apply for a credit increase on my VISA&#153; CARD ACCOUNT number 
+					<%= f.text_field :account_number, :size => 16 %><br />
+					Credit Limit Request 
+					<%= f.radio_button("credit_limit_request", "Increase my credit limit by $500") %>$500&nbsp; 
+					<%= f.radio_button("credit_limit_request", "Increase my credit limit by $1,000") %>$1,000&nbsp; 
+					<%= f.radio_button("credit_limit_request", "Increase my credit limit by the amount specified") %>Other $ 
+					<%= f.text_field :other_limit, :size => 10 %> 
+				</td>
+			  </tr>
+			  <tr><td colspan="3">&nbsp;In this Application and Agreement the words "I" or "my" mean each person who applies for a VISA&#153; Credit Card or who signs the Agreement or who uses the VISA&#153; Credit Card or duplicate VISA&#153; Credit Card. The words "you" or "your" mean the KIT Federal Credit Union or its successors or assigns.<br />
+														&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The word "account" means my VISA&#153; Credit Card revolving credit account with KIT Federal Credit Union . The word "Card" means my VISA&#153; Credit Card and duplicates of said Card.<br />
+														&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By submitting this request, I hereby apply for a line of credit that I can use from time to time and which may be replenished by payments on amounts previously drawn. By submitting this Application and Agreement establishes my request for the issuance of a Card.</td></tr>
+				   <tr class="gray">
+					<td  ></td>
+					<td align="center"> 
+					  <strong>APPLICANT</strong>
+					</td>
+					<td align="center"> 
+					  <strong>JOINT APPLICANT</strong>
+					</td>
+				</tr>
+				<tr>
+					<td align="left" class="textcolor" >*Name:</td>
+					<td><%= f.text_field :applicant_name %></td>
+					<td class="bkgcolor"><%= f.text_field :joint_applicant_name %></td>
+				</tr>
+				<tr>
+					<td align="left" class="textcolor" >*Street Address :</td>
+					<td> <%= f.text_field :applicant_address %></td>
+					<td class="bkgcolor"><%= f.text_field :joint_applicant_address %></td>
+				</tr>
+				<tr>
+				<td align="left"  class="textcolor">*City :</td><td>
+				<%= f.text_field :applicant_city, :size => 11 %></td>
+				<td class="bkgcolor"><%= f.text_field :joint_applicant_city, :size => 11 %></td></tr>
+				<tr>
+					<td class="textcolor">*State</td>
+					<td>
+						<%= f.select( :applicant_state,
+								{ "Alabama" => "AL", 
+								  "Alaska" => "AK", 
+								  "Arizona" => "AZ", 
+								  "Arkansas" => "AR", 
+								  "California" => "CA", 
+								  "Colorado" => "CO",
+								  "Connecticut" => "CT", 
+								  "Delaware" => "DE", 
+								  "District Of Columbia" => "DC", 
+								  "Florida" => "FL", 
+								  "Georgia" => "GA", 
+								  "Hawaii" => "HI",
+								  "Idaho" => "ID", 
+								  "Illinois" => "IL", 
+								  "Indiana" => "IN", 
+								  "Iowa" => "IO", 
+								  "Kansas" => "KS", 
+								  "Kentucky" => "KY",
+								  "Louisiana" => "LA", 
+								  "Maine" => "ME", 
+								  "Maryland" => "MD", 
+								  "Massachusetts" => "MA", 
+								  "Michigan" => "MI", 
+								  "Minnesota" => "MN",
+								  "Mississippi" => "MS", 
+								  "Missouri" => "MO", 
+								  "Montana" => "MT", 
+								  "Nebraska" => "NE", 
+								  "Nevada" => "NV", 
+								  "New Hampshire" => "NH",
+								  "New Jersey" => "NJ", 
+								  "New Mexico" => "NM", 
+								  "New York" => "NY", 
+								  "North Carolina" => "NC", 
+								  "North Dakota" => "ND", 
+								  "Ohio" => "OH",
+								  "Oklahoma" => "OK", 
+								  "Oregon" => "OR", 
+								  "Pennsylvania" => "PA", 
+								  "Rhode Island" => "RI", 
+								  "South Carolina" => "SC", 
+								  "South Dakota" => "SD",
+								  "Tennessee" => "TN", 
+								  "Texas" => "TX", 
+								  "Utah" => "UT", 
+								  "Vermont" => "VT", 
+								  "Virginia" => "VA", 
+								  "Washington" => "WA",
+								  "West Virginia" => "WV",
+								  "Wisconsin" => "WI",
+								  "Wyoming" => "WY"
+								 }) %></td>
+					<td class="bkgcolor">&nbsp;<%= f.select( :joint_applicant_state,
+								{ "Alabama" => "AL", 
+								  "Alaska" => "AK", 
+								  "Arizona" => "AZ", 
+								  "Arkansas" => "AR", 
+								  "California" => "CA", 
+								  "Colorado" => "CO",
+								  "Connecticut" => "CT", 
+								  "Delaware" => "DE", 
+								  "District Of Columbia" => "DC", 
+								  "Florida" => "FL", 
+								  "Georgia" => "GA", 
+								  "Hawaii" => "HI",
+								  "Idaho" => "ID", 
+								  "Illinois" => "IL", 
+								  "Indiana" => "IN", 
+								  "Iowa" => "IO", 
+								  "Kansas" => "KS", 
+								  "Kentucky" => "KY",
+								  "Louisiana" => "LA", 
+								  "Maine" => "ME", 
+								  "Maryland" => "MD", 
+								  "Massachusetts" => "MA", 
+								  "Michigan" => "MI", 
+								  "Minnesota" => "MN",
+								  "Mississippi" => "MS", 
+								  "Missouri" => "MO", 
+								  "Montana" => "MT", 
+								  "Nebraska" => "NE", 
+								  "Nevada" => "NV", 
+								  "New Hampshire" => "NH",
+								  "New Jersey" => "NJ", 
+								  "New Mexico" => "NM", 
+								  "New York" => "NY", 
+								  "North Carolina" => "NC", 
+								  "North Dakota" => "ND", 
+								  "Ohio" => "OH",
+								  "Oklahoma" => "OK", 
+								  "Oregon" => "OR", 
+								  "Pennsylvania" => "PA", 
+								  "Rhode Island" => "RI", 
+								  "South Carolina" => "SC", 
+								  "South Dakota" => "SD",
+								  "Tennessee" => "TN", 
+								  "Texas" => "TX", 
+								  "Utah" => "UT", 
+								  "Vermont" => "VT", 
+								  "Virginia" => "VA", 
+								  "Washington" => "WA",
+								  "West Virginia" => "WV",
+								  "Wisconsin" => "WI",
+								  "Wyoming" => "WY"
+								 }) %></td>
+				</tr>
+
+				<tr>
+					<td align="left" class="textcolor" >
+						*Zip</td>
+					<td>
+						<%= f.text_field :applicant_zip, :maxlength => 5 %>&nbsp;
+					</td>
+					<td class="bkgcolor">
+						<%= f.text_field :joint_applicant_zip, :maxlength => 5 %>
+						<br />
+					</td>
+				</tr>
+				<tr>
+					<td align="left" class="textcolor" >*Social Security # (XXX-XX-XXXX) : </td>
+					<td><%= f.text_field :applicant_ssn, :maxlength => 11 %></td>
+					<td class="bkgcolor"><%= f.text_field :joint_applicant_ssn, :maxlength => 11 %></td>
+				</tr>
+				<tr>
+					<td align="left" class="textcolor">*Home Phone (XXX-XXX-XXXX):  
+					<br /><br />
+						Work Phone (XXX-XXX-XXXX):
+					<br /><br />
+						*Email Address: 
+					  </td>
+					<td>
+						<%= f.text_field :applicant_home_phone, :maxlength => 12 %>
+					<br /><br />
+						<%= f.text_field :applicant_work_phone, :maxlength => 12 %>
+					<br /><br />
+						<%= f.text_field :applicant_email_address %>        
+					</td>
+					<td class="bkgcolor">
+						<%= f.text_field :joint_applicant_home_phone, :maxlength => 12 %>
+					<br /><br />
+						<%= f.text_field :joint_applicant_work_phone, :maxlength => 12 %>
+					<br /><br />
+						<%= f.text_field :joint_applicant_email_address %>
+					</td>
+				 </tr>
+					  <tr> 
+						<td class="textcolor">
+							*Member Number : </td><td>
+							<%= f.text_field :applicant_member_number %>
+						</td>
+						<td class="bkgcolor">
+							<%= f.text_field :joint_applicant_member_number %>
+						</td>
+					  </tr>
+					  <tr class="gray"> 
+						<td colspan="3"> 
+						  <strong>INCOME</strong>
+						</td>
+					  </tr>
+					  <tr> 
+						<td class="textcolor">
+						  *Employer: </td><td>
+							<%= f.text_field :applicant_employer %>
+						</td>
+						<td class="bkgcolor">
+							<%= f.text_field :joint_applicant_employer %>
+						</td>
+					  </tr>
+					  <tr> 
+						<td class="textcolor">*Income: $</td><td>
+						  <%= f.text_field :applicant_income, :maxlength => 10 %><br />
+						  <%= f.radio_button("applicant_income_type", "Net") %>
+						  Net 
+						  <%= f.radio_button("applicant_income_type", "Gross") %>
+						  Gross<br /><hr />
+						  <%= f.radio_button("applicant_income_frequency", "Annual") %>
+						  Annual 
+						  <%= f.radio_button("applicant_income_frequency", "Monthly") %>
+						  Monthly 
+						  <%= f.radio_button("applicant_income_frequency", "Bi-weekly") %>
+						  Bi-weekly 
+						  <%= f.radio_button("applicant_income_frequency", "Weekly") %>
+						  Weekly</td>
+						<td class="bkgcolor">
+							<%= f.text_field :joint_applicant_income, :maxlength => 10 %><br />
+							<%= f.radio_button("joint_applicant_income_type", "Net") %>
+						  Net 
+							<%= f.radio_button("joint_applicant_income_type", "Gross") %>
+						  Gross<br /><hr />
+							<%= f.radio_button("joint_applicant_income_frequency", "Annual") %>
+							Annual 
+							<%= f.radio_button("joint_applicant_income_frequency", "Monthly") %>
+							Monthly 
+							<%= f.radio_button("joint_applicant_income_frequency", "Bi-weekly") %>
+							Bi-weekly 
+							<%= f.radio_button("joint_applicant_income_frequency", "Weekly") %>
+							Weekly
+						</td>
+					  </tr>
+					  <tr>
+						<td colspan="3">
+							Other Income: (Notice: Alimony, child 
+						  support or separate maintenance income need not 
+						  be revealed if you do not have it considered as 
+						  a basis for repaying this obligation.)
+						</td>
+					  </tr>
+					  <tr> 
+						<td valign="top" >
+						  Source: </td><td>
+						  <%= f.text_field :applicant_other_income_source %>
+						  <br />
+						  $<%= f.text_field :applicant_other_income, :size => 10, :maxlength => 10 %><br />
+						  <%= f.radio_button("applicant_other_income_frequency", "Annual") %>
+						  Annual 
+						  <%= f.radio_button("applicant_other_income_frequency", "Monthly") %>
+						  Monthly 
+						  <%= f.radio_button("applicant_other_income_frequency", "Hourly") %>
+						  Hourly</td>
+						<td class="bkgcolor">
+						  <%= f.text_field :joint_applicant_other_income_source %>
+						  <br />
+						  $ 
+						  <%= f.text_field :joint_applicant_other_income, :size => 10, :maxlength => 10 %>
+							<br />
+						  <%= f.radio_button("joint_applicant_other_income_frequency", "Annual") %>
+						  Annual 
+						  <%= f.radio_button("joint_applicant_other_income_frequency", "Monthly") %>
+						  Monthly 
+						  <%= f.radio_button("joint_applicant_other_income_frequency", "Hourly") %>
+						  Hourly</td>
+					  </tr>
+					  
+			</table>
+        <table class="signature">
+          <tr> 
+            <td colspan="2" class="red"> 
+              <p class="subtitle">SIGNATURES:</p>
+              <hr />
+              <p class="red"><i>
+                        I promise that all information is correct to the best of my knowledge. I authorize KIT <strong>FEDERAL CREDIT UNION</strong> to obtain credit reports in connection with this application for credit and any update, renewal or extension of credit received. If I request, KIT <strong>FEDERAL CREDIT UNION </strong>will tell me the name and address of any credit bureau from which it received a credit report on me. I understand that it is a federal crime to willfully and deliberately provide incomplete or incorrect information on loan applications made to Federal chartered credit unions insured by the National Credit Union Administration.</i></p>
+                        <p class="red"><i>
+                            I give you a security interest in all funds now or hereafter in my Share and Share Draft accounts associated with numbers ______________________ and I authorize you to apply any or all such funds to the payment of any amount ever in default on this account. </i></p>
+                       
+              <br />
+            </td>
+          </tr>
+          <tr> 
+            <td class="red"> 
+              <br />
+                ________________________________________<br />
+                <i>Applicant</i>
+            </td>
+            <td class="red"> 
+              <br />
+                _____/______/_________<br />
+                <i>Date</i>
+            </td>
+          </tr>
+          <tr> 
+            <td class="red"> 
+              <br />
+                ________________________________________<br />
+                <i>Joint Applicant</i>
+            </td>
+            <td class="red"> 
+              <br />
+                _____/______/_________<br />
+                <i>Date</i>
+            </td>
+          </tr>
+        </table>
+		
+<p class="main"><strong>Be sure to print out form prior to submit and fax or mail it to us.</strong><br />
+(Please click anywhere in the white field before you send this page to the printer.)</p>
+
+<p class="main">Please call the Loan Department at <strong>502.459.9286 or 888.459.9286 (toll free)</strong> on the following business day for status of your application.</p>
+
+<p class="centertext"><input type="submit" value="Submit Application" /></p>
+		<% end %>
+		<table class="app">
+			<tr>
+				<td>
+					<hr />
+					<p><strong>LINE OF CREDIT AGREEMENT</strong></p>
+					<hr />
+					<p>1.  The purpose of this Application and Agreement (hereinafter "Agreement") is to establish the Terms and Conditions </p>
+					of a line of credit.
+					<p>2.  Approval of this Agreement by you establishes the following: (a) the credit limit approved shall be determined by 
+					you and this credit limit will be drawn upon as I utilize an issued Card; (b) the account will be repaid in accordance with terms and 
+					conditions of VISA&#153; and in accordance with policies established by the Credit Union's Board of Directors (hereinafter "Directors"); 
+					(c) the Card remains your property and I will surrender it immediately upon request.  The Terms and Conditions referred to herein are 
+					those that will be furnished to me before I have use of my Card.  Said Terms and Conditions are made a part of this Agreement and are 
+					incorporated by reference herein.  By my acceptance of the Card I hereby agree to comply with all the terms both in this Agreement and 
+					in the Terms and Conditions.  In the event I do not wish to comply with the foregoing Terms and Conditions for any reason, I understand 
+					that I may terminate this Agreement by giving you written notice, and by returning the Card to you.</p>
+					<p>3.  I understand that you reserve the right to change the rate of FINANCE CHARGE upon giving written notice required by law.</p>
+					<p>4.  I promise to pay any and all charges incurred by me or any person whom I authorize to use the Card issued to me, 
+					and any fees or charges incurred in the recovery of a Card, retrieval of transaction data, collection of this account, or any other 
+					charges disclosed to me herein or in the Terms and Conditions provided prior to my use of the Card.  I understand that you reserve the 
+					right to change the rate of fees and charges upon giving notice required by law.</p>
+					<p>5.  I acknowledge and agree that you may terminate this Agreement upon adverse re-evaluation of my credit worthiness, upon 
+					my failure to satisfy the terms of this Agreement and the Terms and Conditions established by the Directors and VISA&#153; U.S.A., Inc., or 
+					at my option or at your option if you have good cause.</p>
+					<br />6.<br />
+					<table class="rates">
+						<tr>
+							<td align="center"><strong>DESCRIPTION</strong></td>
+							<td align="center"><strong>VISA&#153; CLASSIC</strong></td>
+						</tr>
+						<tr>
+							<td align="left">ANNUAL PERCENTAGE RATE
+							  for Purchases and Cash Advances*</td>
+							<td align="center">9.9%</td>
+						</tr>
+						<tr>
+							<td>Grace Period For Repayment Of The Balance For Purchase</td>
+							<td align="center">25 Days From Statement Closing Date</td>
+						</tr>
+						<tr>
+							<td>Method Of Computing The Balances For Purchase</td>
+							<td align="center">Average Daily Balance&nbsp;<br />
+		(Including New Purchase)</td>
+						</tr>
+						<tr>
+							<td>Annual Fees</td>
+							<td align="center">None</td>
+						</tr>
+						<tr>
+							<td>Transaction Fee For Purchase</td>
+							<td align="center">None</td>
+						</tr>
+						<tr>
+							<td><p>Minimum Finance Charge</p></td>
+							<td align="center">None</td>
+						</tr>
+						<tr>
+							<td><p>Late Payment Fee</p></td>
+							<td align="center">$20.00</td>
+						</tr>
+						<tr>
+							<td>Fee For Exceeding Credit Limit</td>
+							<td align="center">None</td>
+						</tr>
+						<tr>
+							<td>Return Check or
+							  Electronic Payment</td>
+							<td align="center">$20.00</td>
+						</tr>
+					</table>
+
+					<p> *The Annual Percentage Rate applicable to my account is determined by my personal credit history and will be disclosed to me on documents provided to me upon approval of my application. The daily periodic rate for my account will be determined by dividing the corresponding Annual Percentage Rate by 365 and rounding to the nearest 1/1000,000th of 1%, not to exceed applicable law. The information about the costs of the card described in the disclosure is accurate as of 02/02/2004. This information may have changed after that date. To find out what may have changed call us at 502.459.9286 or 888.459.9286 (toll free).</p>
+
+					<p> 7. If I pay my balance in full within 25 days of the closing date of my statement, I pay no FINANCE CHARGE. The 25-day grace period does not apply to cash advances.</p>
+
+					<p class="centertext"><strong>Important Information About Procedures For Or Opening A New Account</strong></p>
+				    <p>To help the government fight the funding of terrorism and money laundering activities, Federal law requires all financial institutions to obtain, verify and record information that identifies each person who opens an account. What this means for me: When I apply for or open an account. I will be asked for my name, address, date of birth and other documentation that will allow you to identify me.&nbsp;</p>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+</div>

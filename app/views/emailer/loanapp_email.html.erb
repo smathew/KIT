@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>HTML Response from KIT Credit Union</title>
+</head>	
+<body bgcolor="#FFFBE7">
+	<table border="0">
+		<tr><td colspan="2" border="1"><div align="left"><font face="Verdana" size="1">Date Submitted :<%= Time.now.strftime("%A, %B %d, %Y, %H:%M:%S") %></td>
+        </tr>
+                
+        <tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="Verdana" size="2"><strong>----- [ LOAN APPLICATION ] ---------------</strong></font></td></tr>
+        <tr><td bgcolor="#DEDFD7">Loan Type : </td><td bgcolor="#E9EAE3"><%= @app.loan_type %></td></tr>
+		<% if @app.loan_type == "Line of Credit" %>
+			<tr><td bgcolor="#DEDFD7">Line of Credit Amount : </td><td bgcolor="#E9EAE3"> 	<%= @app.line_of_credit_limit %></td></tr>
+		<% end %>
+		<% if @app.loan_type == "Credit Limit Increase" %>
+			<tr><td bgcolor="#DEDFD7">Credit Increase Amount : </td><td bgcolor="#E9EAE3"> 	<%= @app.credit_limit_increase %></td></tr>
+		<% end %>
+		<% if @app.loan_type == "Collateral Secured" %>
+			<tr><td bgcolor="#DEDFD7">Initial Amount Requested : </td><td bgcolor="#E9EAE3"><%= @app.initial_amount_requested %></td></tr>
+		<% end %>
+        <tr><td bgcolor="#DEDFD7">Purpose of Loan :</td><td bgcolor="#E9EAE3"><%= @app.purpose_of_loan %></td></tr>
+		<% if !@app.collateral_offered.blank? %>
+			<tr><td bgcolor="#DEDFD7">Collateral Offered : </td><td bgcolor="#E9EAE3"><%= @app.collateral_offered %></td></tr>
+		<% end %>
+		<% if !@app.owned_by.blank? %>
+			<tr><td bgcolor="#DEDFD7">Collateral Owned By : </td><td bgcolor="#E9EAE3"> 	<%= @app.owned_by %></td></tr>
+		<% end %>
+        <tr><td bgcolor="#DEDFD7">Account Type : </td><td bgcolor="#E9EAE3"><%= @app.type_of_credit %></td></tr>
+                
+        <tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="Verdana" size="2"><strong>----- [ INSURANCE OPTIONS ] ---------------</strong></font></td></tr>
+		<% if !@app.single_credit_life_insurance.blank? %>
+			<tr><td bgcolor="#DEDFD7">Single Insurance : </td><td bgcolor="#E9EAE3"><%= @app.single_credit_life_insurance %></td></tr>
+			<tr><td bgcolor="#DEDFD7">Single Insurance Age : </td><td bgcolor="#E9EAE3"> 	<%= @app.single_credit_insurance_age %></td></tr>
+		<% end %>
+		<% if !@app.joint_credit_life_insurance.blank? %>
+			<tr><td bgcolor="#DEDFD7">Joint Insurance : </td><td bgcolor="#E9EAE3"><%= @app.joint_credit_life_insurance %></td></tr>
+			<tr><td bgcolor="#DEDFD7">Joint Insurance Age : </td><td bgcolor="#E9EAE3"> 	<%= @app.joint_credit_insurance_age %></td></tr>
+		<% end %>
+		<% if !@app.credit_disability_insurance.blank? %>
+			<tr><td bgcolor="#DEDFD7">Disability Insurance : </td><td bgcolor="#E9EAE3"> 	<%= @app.credit_disability_insurance %></td></tr>
+			<tr><td bgcolor="#DEDFD7">Disability Insurance Age : </td><td bgcolor="#E9EAE3"><%= @app.credit_disability_insurance_age %></td></tr>
+        <% end %>        
+        <tr align="center"><td colspan="2" bgcolor=\"#4A759C\"><font color="white" face="Verdana" size="2"><strong>----- [ APPLICANT INFORMATION ] ---------------</strong></font></td></tr>
+        <tr><td bgcolor="#DEDFD7">Name :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_name %></td></tr>
+        <tr><td bgcolor="#DEDFD7">Account Number :</td><td bgcolor="#E9EAE3"><%= @app.applicant_account_number %></td></tr>
+        <tr><td bgcolor="#DEDFD7">SSN : </td><td bgcolor="#E9EAE3"><%= @app.applicant_ssn %></td></tr>
+		<% if !@app.applicant_marital_status.blank? %>
+			<tr><td bgcolor="#DEDFD7">Marital Status : </td><td bgcolor="#E9EAE3"><%= @app.applicant_marital_status %></td></tr>
+		<% end %>
+        <tr><td bgcolor="#DEDFD7">Driver's License / State : </td><td bgcolor="#E9EAE3"><%= @app.applicant_drivers_license %> / <%= @app.applicant_drivers_license_state %></td></tr>
+        <tr><td bgcolor="#DEDFD7">BirthDate :</td><td bgcolor="#E9EAE3"><%= @app.applicant_date_of_birth %></td></tr>
+        <tr><td bgcolor="#DEDFD7">Home Phone : </td><td bgcolor="#E9EAE3"><%= @app.applicant_home_phone %></td></tr>
+		<% if !@app.applicant_business_phone.blank? %>
+			<tr><td bgcolor="#DEDFD7">Work Phone : </td><td bgcolor="#E9EAE3"><%= @app.applicant_business_phone %></td></tr>
+		<% end %>
+        <tr><td bgcolor="#DEDFD7">Email Address : </td><td bgcolor="#E9EAE3"><%= @app.applicant_email_address %></td></tr>
+        <tr><td bgcolor="#DEDFD7">Address : </td><td bgcolor="#E9EAE3"><%= @app.applicant_address %></td></tr>
+		<% if !@app.applicant_time_at_residence.blank? %>
+        <tr><td bgcolor="#DEDFD7">Years at Address :  </td><td bgcolor="#E9EAE3"> 	<%= @app.applicant_time_at_residence %></td></tr>
+		<% end %>
+		<% if !@app.applicant_ownership.blank? %>
+			<tr><td bgcolor="#DEDFD7">Home Status : </td><td bgcolor="#E9EAE3"><%= @app.applicant_ownership %></td></tr>
+		<% end %>
+		<% if !@app.applicant_mortgage_owed_to.blank? %>
+			<tr><td bgcolor="#DEDFD7">Mortgage : </td><td bgcolor="#E9EAE3"><%= @app.applicant_mortgage_owed_to %></td></tr>
+		<% end %>
+		<% if !@app.applicant_mortgage_balance.blank? %>
+			<tr><td bgcolor="#DEDFD7">Balance : </td><td bgcolor="#E9EAE3"><%= @app.applicant_mortgage_balance %></td></tr>
+		<% end %>
+		<% if !@app.applicant_monthly_payment.blank? %>
+			<tr><td bgcolor="#DEDFD7">Monthly Payment : </td><td bgcolor="#E9EAE3"><%= @app.applicant_monthly_payment %></td></tr>
+		<% end %>
+		<% if !@app.applicant_current_apr.blank? %>
+			<tr><td bgcolor="#DEDFD7">APR :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_current_apr %></td></tr>
+		<% end %>
+		<% if !@app.applicant_responsible_for_payment.blank? %>
+			<tr><td bgcolor="#DEDFD7">Person Responsible : </td><td bgcolor="#E9EAE3"><%= @app.applicant_responsible_for_payment %></td></tr>
+		<% end %>
+		<% if !@app.applicant_total_monthly_payment.blank? %>
+			<tr><td bgcolor="#DEDFD7">Other Payments :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_total_monthly_payment %></td></tr>
+		<% end %>
+		<% if !@app.applicant_total_monthly_balances.blank? %>
+			<tr><td bgcolor="#DEDFD7">Other Balance :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_total_monthly_balances %></td></tr>
+        <% end %>        
+        <tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="Verdana" size="2"><strong>----- [ EMPLOYMENT INFORMATION : APPLICANT ] ---------------</strong></font></td></tr>
+        <tr><td bgcolor="#DEDFD7">Employer :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_employer %></td></tr>
+        <tr><td bgcolor="#DEDFD7">Income :</td><td bgcolor="#E9EAE3"><%= @app.applicant_income %></td></tr>
+		<% if !@app.applicant_type_of_income.blank?  or !@app.applicant_salary_frequency.blank? %>
+			<tr><td bgcolor="#DEDFD7">Income Type/Frequency :  </td><td bgcolor="#E9EAE3"> 	<%= @app.applicant_type_of_income %> / <%= @app.applicant_salary_frequency %></td></tr>
+		<% end %>
+		<% if !@app.applicant_source_of_other_income.blank? or !@app.applicant_other_income.blank? %>
+			<tr><td bgcolor="#DEDFD7">Other Income Source :  </td><td bgcolor="#E9EAE3"> 	<%= @app.applicant_source_of_other_income %></td></tr>
+			<tr><td bgcolor="#DEDFD7">Other Income Amount : </td><td bgcolor="#E9EAE3"><%= @app.applicant_other_income %></td></tr>
+			<tr><td bgcolor="#DEDFD7">Other Income Period :</td><td bgcolor="#E9EAE3"><%= @app.applicant_other_income_frequency %></td></tr>
+         <% end %>       
+        <tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="Verdana" size="2"><strong>----- [ PERSONAL REFERENCES : APPLICANT  ] ---------------</strong></font></td></tr>
+        <tr><td bgcolor="#DEDFD7">Name 1 :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_reference_name %></td></tr>
+        <tr><td bgcolor="#DEDFD7">Phone 1 :</td><td bgcolor="#E9EAE3"><%= @app.applicant_reference_phone_number %></td></tr>
+        <tr><td bgcolor="#DEDFD7">Relationship 1 :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_reference_relationship %></td></tr>
+		<% if !@app.applicant_reference2_name.blank? %>
+			<tr><td bgcolor="#DEDFD7">Name 2 :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_reference2_name %></td></tr>
+			<tr><td bgcolor="#DEDFD7">Phone 2 :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_reference2_phone_number %></td></tr>
+			<tr><td bgcolor="#DEDFD7">Relationship 2 : </td><td bgcolor="#E9EAE3"><%= @app.applicant_reference2_relationship %></td></tr>
+         <% end %>   
+		<% if !@app.applicant_previous_employer1_job_title.blank? or !@app.applicant_previous_employer2_job_title.blank? %>
+			<tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="Verdana" size="2"><strong>----- [ EMPLOYMENT HISTORY : APPLICANT  ] ---------------</strong></font></td></tr>
+			<% if !@app.applicant_previous_employer1_job_title.blank? %>
+				<tr><td bgcolor="#DEDFD7">Job Title 1 :   </td><td bgcolor="#E9EAE3"><%= @app.applicant_previous_employer1_job_title %></td></tr>
+				<tr><td bgcolor="#DEDFD7">Supervisor 1 : </td><td bgcolor="#E9EAE3"><%= @app.applicant_previous_employer1_supervisor %></td></tr>
+				<tr><td bgcolor="#DEDFD7">Hours Weekly 1 :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_previous_employer1_hours_weekly %></td></tr>
+				<tr><td bgcolor="#DEDFD7">Hourly Wage 1 :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_previous_employer1_hourly_wages %></td></tr>
+				<tr><td bgcolor="#DEDFD7">Salary Frequency 1 : </td><td bgcolor="#E9EAE3"><%= @app.applicant_previous_employer1_salary_frequency %></td></tr>
+				<tr><td bgcolor="#DEDFD7">Start Date 1 :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_previous_employer1_start_date %></td></tr>
+				<tr><td bgcolor="#DEDFD7">Employment Length 1 :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_previous_employer1_length_of_employment %></td></tr>
+			<% end %>
+			<% if !@app.applicant_previous_employer2_job_title.blank? %>
+				<tr><td bgcolor="#DEDFD7">Job Title 2 : </td><td bgcolor="#E9EAE3"><%= @app.applicant_previous_employer2_job_title %></td></tr>
+				<tr><td bgcolor="#DEDFD7">Supervisor 2 :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_previous_employer2_supervisor %></td></tr>
+				<tr><td bgcolor="#DEDFD7">Hours Weekly 2 :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_previous_employer2_hours_weekly %></td></tr>
+				<tr><td bgcolor="#DEDFD7">Hourly Wage 2 : </td><td bgcolor="#E9EAE3"><%= @app.applicant_previous_employer2_hourly_wages %></td></tr>
+				<tr><td bgcolor="#DEDFD7">Salary Frequency 2 :  </td><td bgcolor="#E9EAE3"> 	<%= @app.applicant_previous_employer2_salary_frequency %></td></tr>
+				<tr><td bgcolor="#DEDFD7">Start Date 2 :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_previous_employer2_start_date %></td></tr>
+				<tr><td bgcolor="#DEDFD7">Employment Length 2 : </td><td bgcolor="#E9EAE3"> 	<%= @app.applicant_previous_employer2_length_of_employment %></td></tr>
+			<% end %>
+		<% end %>
+        <% if !@app.coapplicant_name.blank? %>        
+            <tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="Verdana" size="2"><strong>----- [ JOINT APPLICANT INFORMATION ] ---------------</strong></font></td></tr>
+            <tr><td bgcolor="#DEDFD7">Name :  </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_name %></td></tr>
+            <tr><td bgcolor="#DEDFD7">Account Number :</td><td bgcolor="#E9EAE3"><%= @app.coapplicant_account_number %></td></tr>
+            <tr><td bgcolor="#DEDFD7">SSN : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_ssn %></td></tr>
+			<% if !@app.coapplicant_marital_status.blank? %>
+				<tr><td bgcolor="#DEDFD7">Marital Status : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_marital_status %></td></tr>
+			<% end %>
+            <tr><td bgcolor="#DEDFD7">Driver's License / State : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_drivers_license %> / <%= @app.coapplicant_drivers_license_state %></td></tr>
+            <tr><td bgcolor="#DEDFD7">BirthDate :</td><td bgcolor="#E9EAE3"><%= @app.coapplicant_date_of_birth %></td></tr>
+            <tr><td bgcolor="#DEDFD7">Home Phone : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_home_phone %></td></tr>
+			<% if !@app.coapplicant_business_phone.blank? %>
+				<tr><td bgcolor="#DEDFD7">Work Phone : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_business_phone %></td></tr>
+			<% end %>
+            <tr><td bgcolor="#DEDFD7">Email Address : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_email_address %></td></tr>
+            <tr><td bgcolor="#DEDFD7">Address : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_address %></td></tr>
+			<% if !@app.coapplicant_time_at_residence.blank? %>
+				<tr><td bgcolor="#DEDFD7">Years at Address :  </td><td bgcolor="#E9EAE3"> 	<%= @app.coapplicant_time_at_residence %></td></tr>
+			<% end %>
+			<% if !@app.coapplicant_ownership.blank? %>
+            <tr><td bgcolor="#DEDFD7">Home Status : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_ownership %></td></tr>
+			<% end %>
+			<% if !@app.coapplicant_mortgage_owed_to.blank? %>
+            <tr><td bgcolor="#DEDFD7">Mortgage : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_mortgage_owed_to %></td></tr>
+			<% end %>
+			<% if !@app.coapplicant_mortgage_balance.blank? %>
+            <tr><td bgcolor="#DEDFD7">Balance : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_mortgage_balance %></td></tr>
+			<% end %>
+			<% if !@app.coapplicant_monthly_payment.blank? %>
+            <tr><td bgcolor="#DEDFD7">Monthly Payment : </td><td bgcolor="#E9EAE3"> 	<%= @app.coapplicant_monthly_payment %></td></tr>
+			<% end %>
+			<% if !@app.coapplicant_current_apr.blank? %>
+            <tr><td bgcolor="#DEDFD7">APR :  </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_current_apr %></td></tr>
+			<% end %>
+			<% if !@app.coapplicant_responsible_for_payment.blank? %>
+            <tr><td bgcolor="#DEDFD7">Person Responsible : </td><td bgcolor="#E9EAE3"> 	<%= @app.coapplicant_responsible_for_payment %></td></tr>
+			<% end %>
+			<% if !@app.coapplicant_total_monthly_payment.blank? %>
+            <tr><td bgcolor="#DEDFD7">Other Payments :  </td><td bgcolor="#E9EAE3"> 	<%= @app.coapplicant_total_monthly_payment %></td></tr>
+			<% end %>
+			<% if !@app.coapplicant_total_monthly_balances.blank? %>
+            <tr><td bgcolor="#DEDFD7">Other Balance :  </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_total_monthly_balances %></td></tr>
+			<% end %>
+                    
+            <tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="Verdana" size="2"><strong>----- [ EMPLOYMENT INFORMATION : JOINT APPLICANT ] ---------------</strong></font></td></tr>
+            <tr><td bgcolor="#DEDFD7">Employer :  </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_employer %></td></tr>
+            <tr><td bgcolor="#DEDFD7">Income :</td><td bgcolor="#E9EAE3"><%= @app.coapplicant_income %></td></tr>
+			<% if !@app.coapplicant_type_of_income.blank? or !@app.coapplicant_salary_frequency.blank? %>
+				<tr><td bgcolor="#DEDFD7">Income Type/Frequency :  </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_type_of_income %> / <%= @app.coapplicant_salary_frequency %></td></tr>
+			<% end %>
+			<% if !@app.coapplicant_source_of_other_income.blank? %>
+				<tr><td bgcolor="#DEDFD7">Other Income Source :  </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_source_of_other_income %></td></tr>
+			<% end %>
+			<% if !@app.coapplicant_other_income.blank? %>
+				<tr><td bgcolor="#DEDFD7">Other Income Amount : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_other_income %></td></tr>
+			<% end %>
+			<% if !@app.coapplicant_other_income_frequency.blank? %>
+				<tr><td bgcolor="#DEDFD7">Other Income Period :</td><td bgcolor="#E9EAE3"> 	<%= @app.coapplicant_other_income_frequency %></td></tr>
+			<% end %>
+            <% if !@app.coapplicant_reference_name.blank? or !@app.coapplicant_reference2_name.blank? %>        
+				<tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="Verdana" size="2"><strong>----- [ PERSONAL REFERENCES : JOINT APPLICANT  ] ---------------</strong></font></td></tr>
+				<% if !@app.coapplicant_reference_name.blank? %>
+					<tr><td bgcolor="#DEDFD7">Name 1 :  </td><td bgcolor="#E9EAE3"> <%= @app.coapplicant_reference_name %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Phone 1 :</td><td bgcolor="#E9EAE3"><%= @app.coapplicant_reference_phone_number %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Relationship 1 :  </td><td bgcolor="#E9EAE3"> 	<%= @app.coapplicant_reference_relationship %></td></tr>
+				<% end %>
+				<% if !@app.coapplicant_reference2_name.blank? %>
+					<tr><td bgcolor="#DEDFD7">Name 2 :  </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_reference2_name %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Phone 2 :  </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_reference2_phone_number %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Relationship 2 : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_reference2_relationship %></td></tr>
+				<% end %>
+			<% end %>
+                    
+			<% if !@app.coapplicant_previous_employer1_job_title.blank? or !@app.coapplicant_previous_employer2_job_title.blank? %>
+				<tr align="center"><td colspan="2" bgcolor=\"#4A759C\"><font color="white" face="Verdana" size="2"><strong>----- [ EMPLOYMENT HISTORY : JOINT APPLICANT  ] ---------------</strong></font></td></tr>
+				<% if !@app.coapplicant_previous_employer1_job_title.blank? %>
+					<tr><td bgcolor="#DEDFD7">Job Title 1 :   </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_previous_employer1_job_title %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Supervisor 1 : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_previous_employer1_supervisor %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Hours Weekly 1 :  </td><td bgcolor="#E9EAE3"> 	<%= @app.coapplicant_previous_employer1_hours_weekly %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Hourly Wage 1 :  </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_previous_employer1_hourly_wages %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Salary Frequency 1 : </td><td bgcolor="#E9EAE3"> 	<%= @app.coapplicant_previous_employer1_salary_frequency %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Start Date 1 :  </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_previous_employer1_start_date %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Employment Length 1 :  </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_previous_employer1_length_of_employment %></td></tr>
+				<% end %>
+				<% if !@app.coapplicant_previous_employer2_job_title.blank? %>
+					<tr><td bgcolor="#DEDFD7">Job Title 2 : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_previous_employer2_job_title %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Supervisor 2 :  </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_previous_employer2_supervisor %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Hours Weekly 2 :  </td><td bgcolor="#E9EAE3"> 	<%= @app.coapplicant_previous_employer2_hours_weekly %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Hourly Wage 2 : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_previous_employer2_hourly_wages %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Salary Frequency 2 :  </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_previous_employer2_salary_frequency %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Start Date 2 :  </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_previous_employer2_start_date %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Employment Length 2 : </td><td bgcolor="#E9EAE3"><%= @app.coapplicant_previous_employer2_length_of_employment %></td></tr>
+				<% end %>
+			<% end %>
+        <% end %> 
+        <tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="Verdana" size="2"><strong>----- [ END OF EMAIL TRANSMISSION ] ---------------</strong></font></td><tr>
+        </td>
+        </tr>
+	</table>
+</body>
+</html>

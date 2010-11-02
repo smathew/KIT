@@ -1,0 +1,447 @@
+<div id="mainholderpad" class="clearfix">
+	<a name="top" id="top"></a>
+	<h1><a name="apps" id="apps"></a>Current Loan Rates</h1>
+	<p>
+    <%= link_to "New Vehicle Loans", :anchor => "new" %><br />
+	<%= link_to "Used Vehicle Loans", :anchor => "used" %><br />
+    <%= link_to "Motorcycle Loans", :anchor => "motorcycle" %><br />
+    <%= link_to "Real Estate Loans", :anchor => "realestate" %><br />
+    <%= link_to "Signature and Other Loans", :anchor => "signature" %></p>
+    <p>KIT strives to offer the most competitive rates available. When making
+       comparisons to other lenders, make sure there are no hidden costs.
+       KIT's loans are &quot;simple interest&quot; loans, so you pay interest
+       on your current balance and there are no prepayment fees.<br />
+    <br />
+       If you are buying a vehicle, you should do the following steps:</p>
+    <ol>
+        <li>Check out pricing for your purchase with <%= link_to "Carfax", "http://www.carfax.com/", :rel=>"confirm external" %> or 
+            <%= link_to "N.A.D.A.", "http://www.nada.com/", :rel=>"confirm external" %> information services to determine how much you want to spend.</li>
+        <li>Determine how much you are putting down on the vehicle, either by cash or through
+            your trade-in (see approximate value at <%= link_to "N.A.D.A.", "http://www.nada.com/", :rel=>"confirm external" %>)
+            or both.</li>
+        <li>Determine the amount you need to borrow (Step 1 - Step 2).</li>
+        <li>Find the rate of your loan <%= link_to "below", :anchor => "auto" %>.</li>
+        <li>Use the <%= link_to "Loan Calculator", slc_path %> to determine your approximate monthly payment.</li>
+    </ol>
+    <p>Apply for your loan <%= link_to "NOW", new_loanapp_path, :rel=>"external" %>!</p>
+    <hr />
+    <p><a name="new" id="new"></a></p>
+    <table class="sharerates">
+        <tr>
+            <th colspan="8">New Vehicle Loans</th>
+        </tr>
+        <tr>
+            <th>Range</th>
+            <th>Credit Rating</th>
+            <th>24 Months*</th>
+            <th>36 Mos</th>
+            <th>48 Mos</th>
+            <th>60 Mos</th>
+            <th>72 Mos</th>
+            <th>84** Mos</th>
+        </tr>
+        <tr>
+            <td>730 +</td>
+            <td>A+</td>
+            <td>4.90%</td>
+            <td>4.99%</td>
+            <td>5.50%</td>
+            <td>5.50%</td>
+            <td>6.25%</td>
+            <td>7.25%</td>
+        </tr>
+        <tr>
+            <td>680-729</td>
+            <td>A</td>
+            <td>5.40%</td>
+            <td>5.49%.</td>
+            <td>5.75%</td>
+            <td>5.75%</td>
+            <td>6.50%</td>
+            <td>7.90%</td>
+        </tr>
+        <tr>
+            <td>640-679</td>
+            <td>B</td>
+            <td>5.90%</td>
+            <td>6.49%</td>
+            <td>6.75%</td>
+            <td>6.75%</td>
+            <td>6.95%</td>
+            <td>8.10%</td>
+        </tr>
+        <tr>
+            <td>600-639</td>
+            <td>C</td>
+            <td>7.00%</td>
+            <td>6.99%</td>
+            <td>7.50%</td>
+            <td>7.50%</td>
+            <td>9.50%</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <td>550-599</td>
+            <td>D</td>
+            <td>7.99%</td>
+            <td>8.99%</td>
+            <td>9.49%</td>
+            <td>10.49%</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <td>549 or less</td>
+            <td>E</td>
+            <td>10.99%</td>
+            <td>11.99%</td>
+            <td>12.49%</td>
+            <td>13.49%</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <td colspan="8"> *
+                minimum 72 month loan= $15,000.00 <br />
+                ** minimum 84 month loan = $25000.00 <br />
+            </td>
+        </tr>
+    </table>
+    <p><a name="used" id="used"></a></p>
+    <table class="sharerates">
+        <tr>
+            <th colspan="7">Used Vehicle Loans</th>
+        </tr>
+        <tr>
+            <td>Range</td>
+            <td>730 +</td>
+            <td>680-729</td>
+            <td>640-679</td>
+            <td>600-639</td>
+            <td>550-599</td>
+            <td>549 or less</td>
+        </tr>
+        <tr>
+            <td>Credit Rating</td>
+            <td>A+</td>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+            <td>E</td>
+        </tr>
+        <tr>
+            <td>2007-2008 36 Months</td>
+            <td>5.00%</td>
+            <td>5.50%</td>
+            <td>6.50%</td>
+            <td>8.50%</td>
+            <td>11.00%</td>
+            <td>14.00%</td>
+        </tr>
+        <tr>
+            <td>2007-2008 48 Months</td>
+            <td>5.25%</td>
+            <td>5.75%</td>
+            <td>6.75%</td>
+            <td>8.75%</td>
+            <td>11.25%</td>
+            <td>14.25%</td>
+        </tr>
+        <tr>
+            <td>2007-2008 60 Months</td>
+            <td>5.49%</td>
+            <td>5.99%</td>
+            <td>6.99%</td>
+            <td>8.99%</td>
+            <td>11.49%</td>
+            <td>14.49%</td>
+        </tr>
+        <tr>
+            <td>2004-2006 36 Months</td>
+            <td>6.00%</td>
+            <td>6.75%</td>
+            <td>7.75%</td>
+            <td>9.75%</td>
+            <td>13.25%</td>
+            <td>16.25%</td>
+        </tr>
+        <tr>
+            <td>2004-2006 48 Months</td>
+            <td>6.25%</td>
+            <td>7.25%</td>
+            <td>8.75%</td>
+            <td>10.75%</td>
+            <td>14.25</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <td>2004-2006 60 Months</td>
+            <td>6.75%</td>
+            <td>7.75%</td>
+            <td>9.75%</td>
+            <td>12.75%</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <td>2000-2003 36 Months</td>
+            <td>7.50%</td>
+            <td>8.00%</td>
+            <td>9.00%</td>
+            <td>11.00%</td>
+            <td>13.50%</td>
+            <td>17.00%</td>
+        </tr>
+        <tr>
+            <td>2000-2003 48 Months</td>
+            <td>8.50%</td>
+            <td>9.00%</td>
+            <td>10.00%</td>
+            <td>12.00%</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <td>2000-2003 60 Months</td>
+            <td>9.50%</td>
+            <td>10.00%</td>
+            <td>11.00%</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+    </table>
+    <p><a name="motorcycle" id="motorcycle"></a></p>
+    <table class="sharerates">
+        <tr>
+            <th colspan="5">  Motorcycle Loans </th>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>Approximate Repayment Period*</td>
+            <td>&nbsp;</td>
+            <td>Annual Percentage Rate*</td>
+            <td>Sample Payment*</td>
+        </tr>
+        <tr>
+            <td>2008 Models</td>
+            <td>Up to 60 Months</td>
+            <td>&nbsp;</td>
+            <td>9.90%</td>
+            <td>$217.49/mo.</td>
+        </tr>
+        <tr>
+            <td>2006-2008 Models</td>
+            <td>Up to 60 Months</td>
+            <td>&nbsp;</td>
+            <td>12.90%</td>
+            <td>$227.09/mo.</td>
+        </tr>
+        <tr>
+            <td colspan="5">*The above Annual Percentage Rates, Approximate Repayment Period, and Sample Payment represent the lowest rate and maximum repayment period offered for each specific described loan type. Your rate and term may be different and is based on your personal credit data. Sample payment based on a $10,000 loan amount.<br />
+                Above payments do not include single coverage of Life and Disability
+                Insurance.<br />
+                Rates and terms are quoted for comparison purposes only, other
+                restrictions may apply. Call a Loan Officer for a quote for your
+                personal needs at 502.459.9286 or 888.459.9286. </td>
+        </tr>
+    </table>
+    <p><a name="realestate" id="realestate"></a></p>
+    <table class="sharerates">
+        <tr>
+            <th colspan="4"> Real Estate Loans</th>
+            <th><%= image_tag "ehl_big.gif", :alt=>"" %><br />
+                We do business in accordance with the Federal Fair Housing Law and the Equal Credit Opportunity Act. </th>
+            </tr>
+        <tr>
+            <th>Description</th>
+            <th>Approximate Repayment Period*</th>
+            <th>&nbsp;</th>
+            <th>Annual Percentage Rate*</th>
+            <th>Sample Payment*</th>
+        </tr>
+        <tr>
+            <td colspan="5">First Mortgage Purchase Money up to 30 year terms:</td>
+        </tr>
+        <tr>
+            <td colspan="5"><%= link_to "Click here for CU Channels", "http://mortgage.purdueefcu.com/default2.asp", :rel=>"confirm external" %>.</td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                First Mortgage Purchase Money or Refinance (no new funds) Loans:
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Up to 20 Years</td>
+            <td>&nbsp;</td>
+            <td>Call for rate</td>
+            <td>Call for Payment</td>
+            </tr>
+        <tr>
+            <td colspan="5">First
+                and Second Mortgage Non-Purchase Loans:</td>
+            </tr>
+        <tr>
+            <td>Up to 80% LTV</td>
+            <td>1 to 5 years</td>
+            <td>&nbsp;</td>
+            <td>6.99%</td>
+            <td>$198.00/mo.</td>
+            </tr>
+        <tr>
+            <td>81% up to 100% LTV</td>
+            <td>1 to 5 years</td>
+            <td>&nbsp;</td>
+            <td>7.25%</td>
+            <td>$199.24/mo.</td>
+            </tr>
+        <tr>
+            <td>Up to 80% LTV</td>
+            <td>6 to 10 years</td>
+            <td>&nbsp;</td>
+            <td>7.99%</td>
+            <td>$121.32/mo.</td>
+            </tr>
+        <tr>
+            <td>81% up to 100% LTV</td>
+            <td>6 to 10 years</td>
+            <td>&nbsp;</td>
+            <td>8.49%</td>
+            <td>$123.98/mo.</td>
+            </tr>
+        <tr>
+            <td>Up to 80% LTV</td>
+            <td>11 to 15 years</td>
+            <td>&nbsp;</td>
+            <td>8.99%</td>
+            <td>$101.42/mo.</td>
+            </tr>
+        <tr>
+            <td>81% up to 100% LTV</td>
+            <td>11 to 15 years</td>
+            <td>&nbsp;</td>
+            <td>9.74%</td>
+            <td>$105.93/mo.</td>
+            </tr>
+        <tr>
+            <td colspan="5">Home Equity Line of Credit: **</td>
+        </tr>
+        <tr>
+            <td>Up to 50% LTV</td>
+            <td>Up to 15 years</td>
+            <td>&nbsp;</td>
+            <td>Prime + 1%</td>
+            <td rowspan="3">Minimum <br />
+                Payment <br />
+                $10.33<br />
+                $1,000 <br />
+                Borrowed.</td>
+            </tr>
+        <tr>
+            <td>51% up to 80% LTV</td>
+            <td>Up to 15 years</td>
+            <td>&nbsp;</td>
+            <td>Prime + 2%</td>
+            </tr>
+        <tr>
+            <td>81% up to 100% LTV</td>
+            <td>Up to 15 years</td>
+            <td>&nbsp;</td>
+            <td>Prime + 4%</td>
+            </tr>
+        <tr>
+            <td colspan="5">*The
+                above Annual Percentage Rates, Approximate Repayment
+                Period, and Sample Payment represent the lowest rate
+                and maximum repayment period offered for each specific
+                described loan type. Your rate and term may be different
+                and is based on your personal credit data. Sample payment
+                based on a $10,000 loan amount at the maximum term. <br />
+                ** 1st six months of home equity loans have an Annual Percentage
+                Rate of 4.99%. Offer may be discontinued without notice. Call
+                a Loan Officer for information.<br />
+                LTV means Loan to Value - maximum percent of the value of the
+                home KIT will lend you.<br />
+                Rates and terms may change without notice.<br />
+                Real Estate loans may have basic common fees attached (i.e.,
+                title search fee), however be sure to check with the KIT staff
+                for current fees and any specials that may be offered.<br />
+                Rates and terms are quoted for comparison purposes only, other
+                restrictions may apply, call a Loan Officer for a quote for your
+                personal needs at 502.459.9286 or 1.888.459.9286 </td>
+            </tr>
+    </table>
+    <p><%= link_to "Back to Top", :anchor => "top" %>        </p>
+    <hr />
+        <a name="signature" id="signature"></a>
+        <table class="sharerates">
+            <tr class="blu">
+                <th colspan="4">Other Loans</th>
+            </tr>
+            <tr class="blu">
+                <td>Description</td>
+                <td>Approximate Repayment Period*</td>
+                <td>Annual Percentage Rate*</td>
+                <td>Sample Payment*</td>
+            </tr>
+            <tr>
+                <td colspan="4">Signature:</td>
+            </tr>
+            <tr>
+                <td>Ready Cash Line of Credit</td>
+                <td>Up to 60 Months</td>
+                <td>9.90%</td>
+                <td>$212.04/mo.</td>
+            </tr>
+            <tr>
+                <td>Unsecured</td>
+                <td>Up to 60 Months</td>
+                <td>9.90%</td>
+                <td>$222.01/mo.</td>
+            </tr>
+            <tr>
+                <td colspan="4">Savings Secured Loans:</td>
+            </tr>
+            <tr>
+                <td>100% Share Secured</td>
+                <td>Up to 60 Months</td>
+                <td>7.00%</td>
+                <td>$198.10/mo.</td>
+            </tr>
+            <tr>
+                <td>100% Share Certificate Secured</td>
+                <td>Up to 60 Months</td>
+                <td>Your Certificate Rate plus 2%</td>
+                <td>Varies based on rate and term</td>
+            </tr>
+            <tr>
+                <td colspan="4">Visa&reg; Credit Card:</td>
+            </tr>
+            <tr>
+                <td>Please click here for <%= link_to "Important Disclosure &amp; Application", new_visarequest_path, :rel=>"external" %></td>
+                <td>Revolving</td>
+                <td>9.90%</td>
+                <td>3% of Balance</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="blu2">*The above Annual Percentage Rates, 
+                Approximate Repayment Period, and Sample Payment represent the 
+                lowest rate and maximum repayment period offered for each specific 
+                described loan type. Your rate and term may be different and is 
+                based on your personal credit data. Sample payment based on a 
+                $10,000 loan amount.<br /> ** To determine rate, take the annual 
+                percentage rate of your share certificate and add 2% with a minimum 
+                of 7%. Term must be equal to or less than share certificate term 
+                or: 1) the share certificate must be renewed and the loan rate may 
+                change based on the above calculation; or 2) the share certificate 
+                is redeemed and the loan is paid off.<br /> Above payments do not 
+                include single coverage of Life and Disability Insurance.<br /> 
+                Rates and terms are quoted for comparison purposes only, other 
+                restrictions may apply. Call a Loan Officer for a quote for your 
+                personal needs at 502.459.9286 or 888.459.9286.</td>
+            </tr>
+        </table>
+        <p><%= link_to "Back to Top", :anchor => "top" %></p>
+</div>

@@ -1,0 +1,31 @@
+<div id="container">
+            <div id="header">
+                <%= link_to image_tag("header_blue.jpg", :alt=>"KIT Header"), root_path %>
+                <div id="nav">
+                    <%= link_to "Membership Information", about_path(:anchor => "membership"), :class=>"menutop" %> | 
+                    <%= link_to "Products &amp; Services", products_path, :class=>"menutop" %> | 
+                    <%= link_to "Online Services", onlineservices_path, :class=>"menutop" %> | 
+                    <%= link_to "What's New", whatsnew_path, :class=>"menutop" %> | 
+                    <%= link_to "About Us", about_path, :class=>"menutop" %> | 
+                    <%= link_to "Rates", ratessavings_path, :class=>"menutop" %> | 
+                    <%= link_to "Newsletter", "pdf/january2010.pdf", :rel=>"external" %>
+                </div>
+                <div id="leftnav" class="clearfix">
+                    <%= link_to image_tag("kit_connect.jpg", :alt=>"Kit Connect"), hb_login_path, :onmouseover=>"lightup('pic1')", :onmouseout=>"turnoff('pic1')",
+:rel=>"external" %>
+                    <ul>
+                        <li><%= link_to "How to Join", new_memberapp_path, :class=>"menu", :rel=>"external" %></li>
+                        <li><%= link_to "Online Applications", onlineservices_path, :class=>"menu" %></li>
+                        <li><%= link_to "Calculators", slc_path, :class=>"menu" %></li>
+                        <li><%= link_to "Contact Us", contact_path, :class=>"menu" %></li>
+                        <li><%= link_to "Loan Rates", ratesloan_path, :class=>"menu" %></li>
+                        <li><%= link_to "Savings Rates", ratessavings_path, :class=>"menu" %></li>
+                        <li><%= link_to "Hot Links", links_path, :class=>"menu" %></li>
+                        <li><%= link_to "Online Services", onlineservices_path, :class=>"menu" %></li>
+                        <li class="noborder"><%= link_to "Captain Cash<br /> Youth Club", captain_cash_path, :class=>"menu" %></li>
+                        <li class="noborder">
+                            <%= image_tag "CaptCash.jpg", :alt=>"Captain Cash Youth Club" %></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="main" class="clearfix">

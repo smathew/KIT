@@ -1,0 +1,38 @@
+<div id="footer">
+	    <div id="footholder">
+            <div id="footerleft">
+                  <%= image_tag "ncuablue.gif", :alt=>"NCUA" %><br />
+                    <%= link_to "Click here for more information", "http://www.ncua.gov/", :rel=>"confirm external", :class=>"menubottom" %><br />
+                 <br />
+                      Your savings federally insured to at least $250,000
+                      and backed by the full faith and credit of the
+                      United States Government. 
+              </div>
+              <div id="footerright">
+                <%= image_tag "ehl_big.gif", :alt=>"Equal Housing Lender" %><br />
+                  <%= link_to "Click here for more information", eft_path(:anchor =>"ehl"), :class=>"menubottom" %><br />
+               <br />
+                  We do business in accordance with the Federal Fair Housing Law &amp; the Equal Credit Opportunity Act. 
+                 <br />
+                 <br />
+              </div>
+    	  <div id="footerlinks">
+            [ <%= link_to "Home", root_path %> | 
+            <%= link_to "Products and Services", products_path %> | 
+            <%= link_to "About Us", about_path %> | 
+            <%= link_to "Online Services", onlineservices_path %> | 
+            <%= link_to "Calculators", slc_path %> ]<br />
+            [ <%= link_to "Current Rates", ratessavings_path %> | 
+            <%= link_to "Fee Schedule", fees_path %> | 
+            <%= link_to "Hot Links", links_path %> | 
+            <%= link_to "What's New", whatsnew_path %> | 
+            <%= link_to "Request Information", new_rfi_path %> ]<br />
+            [ <%= link_to "Our Privacy Disclosure", eft_path(:anchor => "privacy") %> | 
+            <%= link_to "EFT and Other Important Disclosures", eft_path %> ]<br />
+            [ <%= link_to "Membership Agreement", membershipagreement_path %> | 
+            <%= link_to "Contact", contact_path %> ]
+  		  </div>
+	   </div>
+	</div>
+  </div>        
+</div>

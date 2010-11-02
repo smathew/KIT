@@ -1,0 +1,135 @@
+# == Schema Information
+# Schema version: 20101028174534
+#
+# Table name: visarequests
+#
+#  id                                     :integer         not null, primary key
+#  visa_card_account                      :string(255)
+#  type_of_account                        :string(255)
+#  apply_for_credit_increase              :string(255)
+#  account_number                         :string(255)
+#  credit_limit_request                   :string(255)
+#  other_limit                            :string(255)
+#  applicant_name                         :string(255)
+#  applicant_address                      :string(255)
+#  applicant_city                         :string(255)
+#  applicant_state                        :string(255)
+#  applicant_zip                          :integer
+#  applicant_ssn                          :string(255)
+#  applicant_home_phone                   :string(255)
+#  applicant_work_phone                   :string(255)
+#  applicant_email_address                :string(255)
+#  applicant_member_number                :string(255)
+#  applicant_employer                     :string(255)
+#  applicant_income                       :string(255)
+#  applicant_income_type                  :string(255)
+#  applicant_income_frequency             :string(255)
+#  applicant_other_income_source          :string(255)
+#  applicant_other_income                 :string(255)
+#  applicant_other_income_frequency       :string(255)
+#  joint_applicant_name                   :string(255)
+#  joint_applicant_address                :string(255)
+#  joint_applicant_city                   :string(255)
+#  joint_applicant_state                  :string(255)
+#  joint_applicant_zip                    :integer
+#  joint_applicant_ssn                    :string(255)
+#  joint_applicant_home_phone             :string(255)
+#  joint_applicant_work_phone             :string(255)
+#  joint_applicant_email_address          :string(255)
+#  joint_applicant_member_number          :string(255)
+#  joint_applicant_employer               :string(255)
+#  joint_applicant_income                 :string(255)
+#  joint_applicant_income_type            :string(255)
+#  joint_applicant_income_frequency       :string(255)
+#  joint_applicant_other_income_source    :string(255)
+#  joint_applicant_other_income           :string(255)
+#  joint_applicant_other_income_frequency :string(255)
+#  created_at                             :datetime
+#  updated_at                             :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  visa_card_account: MyString
+  type_of_account: MyString
+  apply_for_credit_increase: MyString
+  account_number: MyString
+  credit_limit_request: MyString
+  other_limit: MyString
+  applicant_name: MyString
+  applicant_address: MyString
+  applicant_city: MyString
+  applicant_state: MyString
+  applicant_zip: 1
+  applicant_ssn: MyString
+  applicant_home_phone: MyString
+  applicant_work_phone: MyString
+  applicant_email_address: MyString
+  applicant_member_number: MyString
+  applicant_employer: MyString
+  applicant_income: MyString
+  applicant_income_type: MyString
+  applicant_income_frequency: MyString
+  applicant_other_income_source: MyString
+  applicant_other_income: MyString
+  applicant_other_income_frequency: MyString
+  joint_applicant_name: MyString
+  joint_applicant_address: MyString
+  joint_applicant_city: MyString
+  joint_applicant_state: MyString
+  joint_applicant_zip: 1
+  joint_applicant_ssn: MyString
+  joint_applicant_home_phone: MyString
+  joint_applicant_work_phone: MyString
+  joint_applicant_email_address: MyString
+  joint_applicant_member_number: MyString
+  joint_applicant_employer: MyString
+  joint_applicant_income: MyString
+  joint_applicant_income_type: MyString
+  joint_applicant_income_frequency: MyString
+  joint_applicant_other_income_source: MyString
+  joint_applicant_other_income: MyString
+  joint_applicant_other_income_frequency: MyString
+
+two:
+  visa_card_account: MyString
+  type_of_account: MyString
+  apply_for_credit_increase: MyString
+  account_number: MyString
+  credit_limit_request: MyString
+  other_limit: MyString
+  applicant_name: MyString
+  applicant_address: MyString
+  applicant_city: MyString
+  applicant_state: MyString
+  applicant_zip: 1
+  applicant_ssn: MyString
+  applicant_home_phone: MyString
+  applicant_work_phone: MyString
+  applicant_email_address: MyString
+  applicant_member_number: MyString
+  applicant_employer: MyString
+  applicant_income: MyString
+  applicant_income_type: MyString
+  applicant_income_frequency: MyString
+  applicant_other_income_source: MyString
+  applicant_other_income: MyString
+  applicant_other_income_frequency: MyString
+  joint_applicant_name: MyString
+  joint_applicant_address: MyString
+  joint_applicant_city: MyString
+  joint_applicant_state: MyString
+  joint_applicant_zip: 1
+  joint_applicant_ssn: MyString
+  joint_applicant_home_phone: MyString
+  joint_applicant_work_phone: MyString
+  joint_applicant_email_address: MyString
+  joint_applicant_member_number: MyString
+  joint_applicant_employer: MyString
+  joint_applicant_income: MyString
+  joint_applicant_income_type: MyString
+  joint_applicant_income_frequency: MyString
+  joint_applicant_other_income_source: MyString
+  joint_applicant_other_income: MyString
+  joint_applicant_other_income_frequency: MyString

@@ -1,0 +1,177 @@
+<div id="mainholderpad" class="clearfix">
+	<% form_for(@rfi) do |f| %>
+		<%= f.error_messages %>
+		<table>
+			<tr>
+				<td>
+					<h1 class="centertext">Request Information</h1>
+			<strong>Send me information on the following services<br />
+				(choose as many as you need)</strong>
+			<hr />
+		<br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+						<%= check_box("rfi", "membership_application", {}, "yes", "no")%> Membership Application<br />
+						<br />
+						<%= check_box("rfi", "family_membership", {}, "yes", "no")%> Family Membership<br />
+						<br />
+						<%= check_box("rfi", "savings_account", {}, "yes", "no")%> Savings Account<br />
+						<br />
+						<%= check_box("rfi", "checking_account", {}, "yes", "no")%> Checking Account<br />
+						<br />
+						<%= check_box("rfi", "christmas_club_account", {}, "yes", "no")%> Christmas Club Account<br />
+						<br />
+						<%= check_box("rfi", "money_market_account", {}, "yes", "no")%> Money Market Account<br />
+						<br />
+						<%= check_box("rfi", "ira_savings", {}, "yes", "no")%> Individual Retirement Account (IRA) Savings<br />
+						<br />
+						<%= check_box("rfi", "ira_share_certificates", {}, "yes", "no")%> IRA Share Certificates<br />
+						<br />
+						<%= check_box("rfi", "share_certificates", {}, "yes", "no")%> Share Certificates<br />
+						<br />
+						<%= check_box("rfi", "audio_response_system", {}, "yes", "no")%> Audio Response System information and PIN Number for activation<br />
+						<br />
+						<%= check_box("rfi", "overdraft_loan_information", {}, "yes", "no")%> Overdraft Loan Information and Application<br />
+						<br />
+						<%= check_box("rfi", "personal_loan_information", {}, "yes", "no")%> Personal Loan Information and Application<br />
+						<br />
+						<%= check_box("rfi", "automobile_loan_information", {}, "yes", "no")%> Automobile Loan Information and Application<br />
+						<br />
+						<%= check_box("rfi", "heloc", {}, "yes", "no")%> Home Equity Line of Credit Loan Information
+						and Application<br />
+						<br />
+						<%= check_box("rfi", "mortgage_loan_information", {}, "yes", "no")%> Mortgage Loan Information and Application<br />
+						<br />
+						<%= check_box("rfi", "visa_classic_card", {}, "yes", "no")%>VISA Classic Card<br />
+						<br />
+						<%= check_box("rfi", "visa_debit_card", {}, "yes", "no")%>VISA Debit Card <br />
+						<br />
+						<%= check_box("rfi", "direct_deposit", {}, "yes", "no")%> Direct Deposit/Net Pay Services<br />
+						<br />
+						<%= check_box("rfi", "money_orders", {}, "yes", "no")%> Money Orders<br />
+						<br />
+						<%= check_box("rfi", "travelers_checks", {}, "yes", "no")%> Traveler's Checks<br />
+						<br />
+						<%= check_box("rfi", "free_notary_service", {}, "yes", "no")%> Free Notary Service<br />
+						<br />
+						<%= check_box("rfi", "discount_tickets", {}, "yes", "no")%> Discount Entertainment Tickets<br />
+						<br />
+						<%= check_box("rfi", "other_information", {}, "yes", "no")%>Other information you want to request
+						or information you want to tell us:<br />
+						<br />
+						<%= f.text_area :questions_comments, :rows=>5, :cols=> 55 %>
+					<hr />
+					
+					<table class="app">
+						<tr>
+							<td class="textcolor">*Name:
+							</td>
+							<td><%= f.text_field :name %>
+							</td>
+						</tr>
+						<tr>
+							<td class="textcolor">*Phone (XXX-XXX-XXXX):
+							</td>
+							<td>
+								<%= f.text_field :phone_number, :maxlength => 12  %>
+							</td>
+						</tr>
+						<tr>
+							<td class="textcolor">*E-Mail Address:
+							</td>
+							<td>
+								<%= f.text_field :email_address %>
+							</td>
+						</tr>
+						<tr>
+							<td class="textcolor">*Home Address:
+							</td>
+							<td>
+								<%= f.text_field :home_address %>
+							</td>
+						</tr>
+						<tr>
+							<td class="textcolor">*City:
+							</td>
+							<td>
+								<%= f.text_field :city %>
+							</td>
+						 </tr>
+						 <tr>
+							<td class="textcolor">*State:
+							</td>
+							<td>
+								<%= f.select( :state,
+								{ "Alabama" => "AL", 
+								  "Alaska" => "AK", 
+								  "Arizona" => "AZ", 
+								  "Arkansas" => "AR", 
+								  "California" => "CA", 
+								  "Colorado" => "CO",
+								  "Connecticut" => "CT", 
+								  "Delaware" => "DE", 
+								  "District Of Columbia" => "DC", 
+								  "Florida" => "FL", 
+								  "Georgia" => "GA", 
+								  "Hawaii" => "HI",
+								  "Idaho" => "ID", 
+								  "Illinois" => "IL", 
+								  "Indiana" => "IN", 
+								  "Iowa" => "IO", 
+								  "Kansas" => "KS", 
+								  "Kentucky" => "KY",
+								  "Louisiana" => "LA", 
+								  "Maine" => "ME", 
+								  "Maryland" => "MD", 
+								  "Massachusetts" => "MA", 
+								  "Michigan" => "MI", 
+								  "Minnesota" => "MN",
+								  "Mississippi" => "MS", 
+								  "Missouri" => "MO", 
+								  "Montana" => "MT", 
+								  "Nebraska" => "NE", 
+								  "Nevada" => "NV", 
+								  "New Hampshire" => "NH",
+								  "New Jersey" => "NJ", 
+								  "New Mexico" => "NM", 
+								  "New York" => "NY", 
+								  "North Carolina" => "NC", 
+								  "North Dakota" => "ND", 
+								  "Ohio" => "OH",
+								  "Oklahoma" => "OK", 
+								  "Oregon" => "OR", 
+								  "Pennsylvania" => "PA", 
+								  "Rhode Island" => "RI", 
+								  "South Carolina" => "SC", 
+								  "South Dakota" => "SD",
+								  "Tennessee" => "TN", 
+								  "Texas" => "TX", 
+								  "Utah" => "UT", 
+								  "Vermont" => "VT", 
+								  "Virginia" => "VA", 
+								  "Washington" => "WA",
+								  "West Virginia" => "WV",
+								  "Wisconsin" => "WI",
+								  "Wyoming" => "WY"
+								 }) %>
+							</td>
+						 </tr>
+						 <tr>
+							<td class="textcolor">*Zip:
+							</td>
+							<td>
+								<%= f.text_field :zip, :maxlength => 5 %>
+							</td>
+						</tr>
+					</table>
+					
+					<hr />
+					<p class="centertext">
+						<%= f.submit 'Submit Information Request' %></p>
+			  </td>
+		  </tr>
+	  </table>
+	<% end %>
+</div>

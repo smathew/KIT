@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>HTML Response from KIT Credit Union</title>
+</head>	
+<body bgcolor="#FFFBE7">
+	<table border="0">
+		<tr><td colspan="2" border=\"1\"><div align=\"left\"><font face="Verdana" size="1">Date Submitted :<%= Time.now.strftime("%A, %B %d, %Y, %H:%M:%S") %></td>
+		</tr>
+		<tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="Verdana" size="2"><b>----- [ MEMBERSHIP APPLICATION ] ---------------</b></font></td></tr>
+		<tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="Verdana" size="2"><b>----- [ APPLICANT INFORMATION ] ---------------</b></font></td></tr>
+		<tr><td bgcolor="#DEDFD7">Name : </td><td bgcolor="#E9EAE3"><%= @app.salutation %><%= @app.name %></td></tr>
+		<tr><td bgcolor="#DEDFD7">SSN : </td><td bgcolor="#E9EAE3"><%= @app.ssn %></td></tr>
+		<tr><td bgcolor="#DEDFD7">DOB : </td><td bgcolor="#E9EAE3"><%= @app.date_of_birth %></td></tr>
+			<% if !@app.joint_name.blank? %>
+					<tr><td bgcolor="#DEDFD7">Joint's Name : </td><td bgcolor="#E9EAE3"><%= @app.joint_salutation %> <%= @app.joint_name %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Joint's SSN : </td><td bgcolor="#E9EAE3"><%= @app.joint_ssn %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Joint's DOB : </td><td bgcolor="#E9EAE3"><%= @app.joint_date_of_birth %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Joint Privacy Code: </td><td bgcolor="#E9EAE3"><%= @app.privacy_code_for_joint %></td></tr>
+			<% end %>
+		<tr><td bgcolor="#DEDFD7">Physical Address : </td><td bgcolor="#E9EAE3"><%= @app.physical_address %></td></tr>
+		<tr><td bgcolor="#DEDFD7">City : </td><td bgcolor="#E9EAE3"><%= @app.city %></td></tr>
+		<tr><td bgcolor="#DEDFD7">State : </td><td bgcolor="#E9EAE3"><%= @app.state %></td></tr>
+		<tr><td bgcolor="#DEDFD7">Zip : </td><td bgcolor="#E9EAE3"><%= @app.zip %></td></tr>
+		<% if !@app.mailing_address.blank? %>
+			<tr><td bgcolor="#DEDFD7">Mailing Address : </td><td bgcolor="#E9EAE3"><%= @app.mailing_address %></td></tr>
+			<tr><td bgcolor="#DEDFD7">City : </td><td bgcolor="#E9EAE3"><%= @app.mailing_city %></td></tr>
+			<tr><td bgcolor="#DEDFD7">State : </td><td bgcolor="#E9EAE3"><%= @app.mailing_state %></td></tr>
+			<tr><td bgcolor="#DEDFD7">Zip : </td><td bgcolor="#E9EAE3"><%= @app.mailing_zip %></td></tr>
+		<% end %>
+		<tr><td bgcolor="#DEDFD7">Home Phone : </td><td bgcolor="#E9EAE3"><%= @app.home_phone %></td></tr>
+		<% if !@app.business_phone.blank? %>
+			<tr><td bgcolor="#DEDFD7">Work Phone : </td><td bgcolor="#E9EAE3"><%= @app.business_phone %></td></tr>
+		<% end %>
+		<tr><td bgcolor="#DEDFD7">Membership Eligibility : </td><td bgcolor="#E9EAE3">	<%= @app.membership_eligibility %></td></tr>
+		<tr><td bgcolor="#DEDFD7">Parish/Family : </td><td bgcolor="#E9EAE3"><%= @app.describe_membership_eligibility %></td></tr>
+		<tr><td bgcolor="#DEDFD7">Privacy Code: </td><td bgcolor="#E9EAE3"><%= @app.privacy_code_for_member %></td></tr>
+		<tr><td bgcolor="#DEDFD7">Email : </td><td bgcolor="#E9EAE3"><%= @app.email_address %></td></tr>
+		<% if !@app.best_time_to_call.blank? %>
+			<tr><td bgcolor="#DEDFD7">Best Time to Call : </td><td bgcolor="#E9EAE3"><%= @app.best_time_to_call %></td></tr>
+		<% end %>
+		<% if !@app.us_citizen.blank? %>
+			<tr><td bgcolor="#DEDFD7">Are you a citizen : </td><td bgcolor="#E9EAE3"><%= @app.us_citizen %></td></tr>
+		<% end %>
+		<tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="Verdana" size="2"><b>----- [ MEMBERSHIP OPTIONS ] ---------------</b></font></td></tr>
+		<% if @app.prime_savings == "yes" %>
+			<tr><td bgcolor="#DEDFD7">Prime Savings : </td><td bgcolor="#E9EAE3">I would like to open a Prime Savings Account</td></tr>
+		<% end %>
+		<% if @app.other_savings == "yes" %>
+			<tr><td bgcolor="#DEDFD7">Other Savings : </td><td bgcolor="#E9EAE3">I would like to open an Other Savings Account</td></tr>
+		<% end %>
+		<% if @app.visa_debit_card == "yes" %>
+			<tr><td bgcolor="#DEDFD7">Card Type : </td><td bgcolor="#E9EAE3">I would like to have a VISA Debit Card</td></tr>
+		<% end %>
+		<% if @app.audio_response_pin == "yes" %>
+			<tr><td bgcolor="#DEDFD7">Audio Response :</td><td bgcolor="#E9EAE3">I would like to have a KIT Connect and Audio Response PIN Number</td></tr>
+		<% end %>
+		<% if @app.share_draft == "yes" or !@app.overdraft_protection.blank? %>
+			<tr><td bgcolor="#DEDFD7">Share Draft : </td><td bgcolor="#E9EAE3">Wish to Open an Account</td></tr>
+			<tr><td bgcolor="#DEDFD7">Overdraft protection option : </td><td bgcolor="#E9EAE3"><%= @app.overdraft_protection %></td></tr>
+		<% end %>
+		<tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="Verdana" size="2"><b>----- [ END OF EMAIL TRANSMISSION ] ---------------</b></font></td><tr>
+		</td>
+		</tr>
+	</table>
+</body>
+</html>

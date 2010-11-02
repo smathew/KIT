@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>HTML Response from KIT Credit Union</title>
+</head>	
+<body bgcolor="#FFFBE7">
+	<table border="0">
+		<tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="verdana" size="2"><strong>----- [ VISA APPLICATION ] ---------------</strong></font></td></tr>
+		<tr><td bgcolor="#DEDFD7">Date Submitted : </td><td bgcolor="#E9EAE3"> <%= Time.now.strftime("%A, %B %d, %Y, %H:%M:%S") %></td></tr>
+		<tr><td bgcolor="#DEDFD7">Apply For Visa : </td><td bgcolor="#E9EAE3"><%= @app.visa_card_account %></td></tr>
+		<tr><td bgcolor="#DEDFD7">Type of account : </td><td bgcolor="#E9EAE3"><%= @app.type_of_account %></td></tr>
+		<tr><td bgcolor="#DEDFD7">Apply For Increase : </td><td bgcolor="#E9EAE3"><%= @app.apply_for_credit_increase %></td></tr>
+		<% if @app.apply_for_credit_increase == "Yes" %>
+			<tr><td bgcolor="#DEDFD7">Card Number : </td><td bgcolor="#E9EAE3"><%= @app.account_number %></td></tr>
+			<tr><td bgcolor="#DEDFD7">Increase : </td><td bgcolor="#E9EAE3"><%= @app.credit_limit_request %></td></tr>
+			<% if @app.credit_limit_request == "Increase my credit limit by the amount specified" %>
+				<tr><td bgcolor="#DEDFD7">Other Amount : </td><td bgcolor="#E9EAE3"><%= @app.other_limit %></td></tr>
+			<% end %>
+		<% end %>
+				
+		<tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="verdana" size="2"><strong>----- [ APPLICANT INFORMATION ] ---------------</strong></font></td></tr>
+		<tr><td bgcolor="#DEDFD7">Name :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_name %></td></tr>
+		<tr><td bgcolor="#DEDFD7">Address : </td><td bgcolor="#E9EAE3"><%= @app.applicant_address %></td></tr>
+		<tr><td bgcolor="#DEDFD7">City : </td><td bgcolor="#E9EAE3"><%= @app.applicant_city %></td></tr>
+		<tr><td bgcolor="#DEDFD7">State : </td><td bgcolor="#E9EAE3"><%= @app.applicant_state %></td></tr>
+		<tr><td bgcolor="#DEDFD7">Zip : </td><td bgcolor="#E9EAE3"><%= @app.applicant_zip %></td></tr>
+		<tr><td bgcolor="#DEDFD7">SSN : </td><td bgcolor="#E9EAE3"><%= @app.applicant_ssn %></td></tr>
+		<tr><td bgcolor="#DEDFD7">Home Phone : </td><td bgcolor="#E9EAE3"><%= @app.applicant_home_phone %></td></tr>
+		<% if !@app.applicant_work_phone.blank? %>
+			<tr><td bgcolor="#DEDFD7">Work Phone : </td><td bgcolor="#E9EAE3"><%= @app.applicant_work_phone %></td></tr>
+		<% end %>
+		<tr><td bgcolor="#DEDFD7">Email Address : </td><td bgcolor="#E9EAE3"><%= @app.applicant_email_address %></td></tr>
+		<tr><td bgcolor="#DEDFD7">Member Number : </td><td bgcolor="#E9EAE3"><%= @app.applicant_member_number %></td></tr>
+				
+		<tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="verdana" size="2"><strong>----- [ EMPLOYMENT INFORMATION : APPLICANT ] ---------------</strong></font></td></tr>
+		<tr><td bgcolor="#DEDFD7">Employer :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_employer %></td></tr>
+		<tr><td bgcolor="#DEDFD7">Income :</td><td bgcolor="#E9EAE3"><%= @app.applicant_income %></td></tr>
+		<tr><td bgcolor="#DEDFD7">Income Type/Frequency :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_income_type %> / <%= @app.applicant_income_frequency %></td></tr>
+		<% if !@app.applicant_other_income_source.blank? or !@app.applicant_other_income.blank? %>
+			<tr><td bgcolor="#DEDFD7">Other Income Source :  </td><td bgcolor="#E9EAE3"><%= @app.applicant_other_income_source %></td></tr>
+			<tr><td bgcolor="#DEDFD7">Other Income Amount : </td><td bgcolor="#E9EAE3"><%= @app.applicant_other_income %></td></tr>
+			<tr><td bgcolor="#DEDFD7">Other Income Period :</td><td bgcolor="#E9EAE3"><%= @app.applicant_other_income_frequency %></td></tr>
+		<% end %>
+				
+				<% if !@app.joint_applicant_name.blank? %>
+					<tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="verdana" size="2"><strong>----- [ JOINT APPLICANT INFORMATION ] ---------------</strong></font></td></tr>
+					<tr><td bgcolor="#DEDFD7">Name :  </td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_name %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Address : </td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_address %></td></tr>
+					<tr><td bgcolor="#DEDFD7">City : </td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_city %></td></tr>
+					<tr><td bgcolor="#DEDFD7">State : </td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_state %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Zip : </td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_zip %></td></tr>
+					<tr><td bgcolor="#DEDFD7">SSN : </td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_ssn %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Home Phone : </td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_home_phone %></td></tr>
+					<% if !@app.joint_applicant_work_phone.blank? %>
+						<tr><td bgcolor="#DEDFD7">Work Phone : </td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_work_phone %></td></tr>
+					<% end %>
+					<tr><td bgcolor="#DEDFD7">Email Address : </td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_email_address %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Member Number : </td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_member_number %></td></tr>
+					
+					<tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="verdana" size="2"><strong>----- [ EMPLOYMENT INFORMATION : JOINT APPLICANT ] ---------------</strong></font></td></tr>
+					<tr><td bgcolor="#DEDFD7">Employer :  </td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_employer %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Income :</td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_income %></td></tr>
+					<tr><td bgcolor="#DEDFD7">Income Type/Frequency :  </td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_income_type %> / <%= @app.joint_applicant_income_frequency %></td></tr>
+					<% if !@app.joint_applicant_other_income_source.blank? or !@app.joint_applicant_other_income.blank? %>
+						<tr><td bgcolor="#DEDFD7">Other Income Source :  </td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_other_income_source %></td></tr>
+						<tr><td bgcolor="#DEDFD7">Other Income Amount : </td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_other_income %></td></tr>
+						<tr><td bgcolor="#DEDFD7">Other Income Period :</td><td bgcolor="#E9EAE3"><%= @app.joint_applicant_other_income_frequency %></td></tr>
+					<% end %>
+				<% end %>
+		<tr align="center"><td colspan="2" bgcolor="#4A759C"><font color="white" face="verdana" size="2"><strong>----- [ END OF EMAIL TRANSMISSION ] ---------------</strong></font></td><tr>
+		</td>
+		</tr>
+	</table>
+</body>
+</html>
